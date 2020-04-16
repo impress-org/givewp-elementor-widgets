@@ -1,18 +1,17 @@
 <?php 
 /**
- * Elementor oEmbed Widget.
+ * Donation Widgets 4 Elementor GiveWP Receipt Widget.
  *
- * Elementor widget that inserts an embbedable content into the page, from any given URL.
+ * Elementor widget that inserts the GiveWP Donation Receipt onto any page.
  *
  * @since 1.0.0
  */
 
-class Elementor_oEmbed_Widget extends \Elementor\Widget_Base {
+class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
   
-		//wp_register_script( 'script-handle', 'path/to/file.js', [ 'elementor-frontend' ], '1.0.0', true );
 		wp_register_style( 'dw4elementor-admin-styles', GiveWP_DW_4_Elementor_URL . '/assets/dw4elementor-admin.css', array(), mt_rand(1,999), 'all');
 	 }
   
@@ -31,7 +30,7 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'GiveWP Donation Form';
+		return 'GiveWP Receipt';
 	}
 
 	/**
@@ -45,7 +44,7 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'GiveWP Donation Form', 'dw4elementor' );
+		return __( 'GiveWP Receipt', 'dw4elementor' );
 	}
 
 	/**
@@ -89,18 +88,17 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'Content', 'plugin-name' ),
+				'label' => __( 'GiveWP Receipt Settings', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control(
-			'url',
+			'info',
 			[
-				'label' => __( 'URL to embed', 'plugin-name' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'input_type' => 'url',
-				'placeholder' => __( 'https://your-link.com', 'plugin-name' ),
+				'label' => __( '<strong>GiveWP Receipt</strong>', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'raw' => '<p><br />' . __( 'The GiveWP [give_receipt] shortcode does not have any options or settings to configure at all.', 'dw4elementor' ) . '</p>',
 			]
 		);
 
@@ -118,13 +116,11 @@ class Elementor_oEmbed_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-		$settings = $this->get_settings_for_display();
+		$html = do_shortcode('[give_receipt]');
 
-		$html = wp_oembed_get( $settings['url'] );
+		echo '<div class="givewp-elementor-widget give_receipt">';
 
-		echo '<div class="oembed-elementor-widget">';
-
-		echo ( $html ) ? $html : $settings['url'];
+		echo $html;
 
 		echo '</div>';
 

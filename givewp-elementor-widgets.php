@@ -287,10 +287,12 @@ final class GiveWP_DW_4_Elementor {
 	public function init_widgets() {
 
 		// Include Widget files
-		require_once( GiveWP_DW_4_Elementor_DIR . '/widgets/test-widget.php' );
+		require_once( GiveWP_DW_4_Elementor_DIR . '/widgets/donation_history.php' );
+		require_once( GiveWP_DW_4_Elementor_DIR . '/widgets/give_receipt.php' );
 
-		// Register widget
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor_oEmbed_Widget() );
+		// Register widgets
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_Donation_History_Widget() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Receipt_Widget() );
 
     }
     

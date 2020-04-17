@@ -166,7 +166,8 @@ final class GiveWP_DW_4_Elementor {
         
         // Add Plugin actions
 		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
-		//add_action( 'elementor/controls/controls_registered', [ $this, 'init_controls' ] );
+
+		add_action('elementor/editor/before_enqueue_scripts', array($this, 'editor_enqueue_scripts'));
 	
     }
     
@@ -314,6 +315,17 @@ final class GiveWP_DW_4_Elementor {
 		\Elementor\Plugin::$instance->controls_manager->register_control( 'control-type-', new \Elementor_Test_Control() );
 
 	}
+
+	// editor styles
+    public function editor_enqueue_scripts() {
+
+		wp_enqueue_style( 'give-admin-styles', GIVE_PLUGIN_URL . 'assets/dist/css/admin.rtl.css', array(), GIVE_VERSION );
+
+		// admin editor styles
+        wp_enqueue_style('dw4elementor-admin-styles', GiveWP_DW_4_Elementor_URL . '/assets/dw4elementor-admin.css', array('give-admin-styles') , mt_rand(9,999) );
+		
+
+    }
 
 }
 

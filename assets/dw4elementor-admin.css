@@ -1,7 +1,8 @@
-.icon i.dw4elementor-icon:before {
+.elementor-panel .elementor-element .icon i.givewp-icon:before {
     font-family: 'give-icomoon';
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
     content: "\e800";
+    font-style: normal;
 }

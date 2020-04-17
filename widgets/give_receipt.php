@@ -9,15 +9,6 @@
 
 class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 
-	public function __construct($data = [], $args = null) {
-		parent::__construct($data, $args);
-  
-		wp_register_style( 'dw4elementor-admin-styles', GiveWP_DW_4_Elementor_URL . '/assets/dw4elementor-admin.css', array(), mt_rand(1,999), 'all');
-	 }
-  
-	public function get_style_depends() {
-	   return [ 'dw4elementor-admin-styles' ];
-	}
 	
 	/**
 	 * Get widget name.
@@ -58,7 +49,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'dw4elementor-icon';
+		return 'givewp-icon';
 	}
 
 	/**

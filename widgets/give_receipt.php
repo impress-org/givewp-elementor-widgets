@@ -49,7 +49,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'givewp-icon';
+		return 'dw4elementor-icon';
 	}
 
 	/**

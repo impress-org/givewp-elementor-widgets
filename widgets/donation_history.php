@@ -31,7 +31,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'GiveWP Donation Form';
+		return 'Donation History';
 	}
 
 	/**
@@ -45,7 +45,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'GiveWP Donation Form', 'dw4elementor' );
+		return __( 'Donation History', 'dw4elementor' );
 	}
 
 	/**
@@ -89,17 +89,80 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'GiveWP Shortcode Settings', 'dw4elementor' ),
+				'label' => __( 'Donation History Arguments', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control(
-			'info',
+			'id',
 			[
-				'label' => __( '<strong>GiveWP Donation History</strong>', 'dw4elementor' ),
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => '<p><br />' . __( 'The GiveWP [donation_history] shortcode does not have any options or settings to configure at all.', 'dw4elementor' ) . '</p>',
+				'label' => __( 'ID', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => __( 'Show or hide the "ID" column.', 'dw4elementor' ),
+				'label_on' => __( 'Show', 'dw4elementor' ),
+				'label_off' => __( 'Hide', 'dw4elementor' ),
+				'default' => 'yes'
+			]
+		);
+
+		$this->add_control(
+			'date',
+			[
+				'label' => __( 'Date', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => __( 'Show or hide a column with the date of the donation.', 'dw4elementor' ),
+				'label_on' => __( 'Show', 'dw4elementor' ),
+				'label_off' => __( 'Hide', 'dw4elementor' ),
+				'default' => 'yes'
+			]
+		);
+
+		$this->add_control(
+			'donor',
+			[
+				'label' => __( 'Donor', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => __( 'Show or hide a column with the donors full name.', 'dw4elementor' ),
+				'label_on' => __( 'Show', 'dw4elementor' ),
+				'label_off' => __( 'Hide', 'dw4elementor' ),
+				'default' => 'no'
+			]
+		);
+
+		$this->add_control(
+			'amount',
+			[
+				'label' => __( 'Amount', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => __( 'Show or hide a column with the amount of the donation.', 'dw4elementor' ),
+				'label_on' => __( 'Show', 'dw4elementor' ),
+				'label_off' => __( 'Hide', 'dw4elementor' ),
+				'default' => 'yes'
+			]
+		);
+
+		$this->add_control(
+			'status',
+			[
+				'label' => __( 'Status', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => __( 'Show or hide a column with the status of the payment.', 'dw4elementor' ),
+				'label_on' => __( 'Show', 'dw4elementor' ),
+				'label_off' => __( 'Hide', 'dw4elementor' ),
+				'default' => 'no'
+			]
+		);
+
+		$this->add_control(
+			'method',
+			[
+				'label' => __( 'Payment Method', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => __( 'Show or hide a column with the name of the payment method.', 'dw4elementor' ),
+				'label_on' => __( 'Show', 'dw4elementor' ),
+				'label_off' => __( 'Hide', 'dw4elementor' ),
+				'default' => 'no'
 			]
 		);
 
@@ -108,7 +171,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	}
 
 	/**
-	 * Render oEmbed widget output on the frontend.
+	 * Render the [donation_history] output on the frontend.
 	 *
 	 * Written in PHP and used to generate the final HTML.
 	 *
@@ -117,7 +180,25 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-		$html = do_shortcode('[donation_history]');
+		$settings = $this->get_settings_for_display();
+
+		$id = ('yes' === $settings['id'] ? '' : 'id="false"');
+		$donor = ('yes' === $settings['donor'] ? 'donor="true"' : '' );
+		$date = ('yes' === $settings['date'] ? '' : 'date="false"' );
+		$amount = ('yes' === $settings['amount'] ? '' : 'amount="false"' );
+		$status = ('yes' === $settings['status'] ? 'status="true"' : '' );
+		$method = ('yes' === $settings['method'] ? 'payment_method="true"' : '' );
+
+		$html = do_shortcode('
+			[donation_history ' 
+				. $id . ' ' 
+				. $donor . ' '
+				. $date . ' '
+				. $amount . ' '
+				. $status . ' '
+				. $method . 
+				']'
+			);
 
 		echo '<div class="givewp-elementor-widget donation-history">';
 

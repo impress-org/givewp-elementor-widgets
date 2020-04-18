@@ -296,25 +296,6 @@ final class GiveWP_DW_4_Elementor {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Receipt_Widget() );
 
     }
-    
-    /**
-	 * Init Controls
-	 *
-	 * Include controls files and register them
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 */
-	public function init_controls() {
-
-		// Include Control files
-		require_once( __DIR__ . '/controls/test-control.php' );
-
-		// Register control
-		\Elementor\Plugin::$instance->controls_manager->register_control( 'control-type-', new \Elementor_Test_Control() );
-
-	}
 
 	// editor styles
     public function editor_enqueue_scripts() {
@@ -323,8 +304,6 @@ final class GiveWP_DW_4_Elementor {
 
 		// admin editor styles
         wp_enqueue_style('dw4elementor-admin-styles', GiveWP_DW_4_Elementor_URL . '/assets/dw4elementor-admin.css', array('give-admin-styles') , mt_rand(9,999) );
-		
-
     }
 
 }

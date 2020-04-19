@@ -6,3 +6,28 @@
     content: "\e800";
     font-style: normal;
 }
+
+.elementor-control-content .elementor-control-raw-html .dw4e-notice-warning {
+    position: relative;
+    padding-top: 2.5rem;
+    margin: 10px 0px;
+    padding: 2.25rem 0.85rem 0.85rem;
+    color: #9F6000;
+    background-color: #FEEFB3; 
+}
+
+.dw4e-notice-warning .notice-head {
+    background: #9F6000;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.dw4e-notice-warning .notice-message {
+    line-height: 1.25;
+}

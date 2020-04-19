@@ -1,8 +1,8 @@
 <?php 
 /**
- * Elementor oEmbed Widget.
+ * Elementor Donation History Widget.
  *
- * Elementor widget that inserts an embbedable content into the page, from any given URL.
+ * Elementor widget that inserts the GiveWP [donation_history] shrotcode to output a donor's full donation history table.
  *
  * @since 1.0.0
  */
@@ -11,19 +11,12 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
-  
-		//wp_register_script( 'script-handle', 'path/to/file.js', [ 'elementor-frontend' ], '1.0.0', true );
-		wp_register_style( 'dw4elementor-admin-styles', GiveWP_DW_4_Elementor_URL . '/assets/dw4elementor-admin.css', array(), mt_rand(1,999), 'all');
-	 }
-  
-	public function get_style_depends() {
-	   return [ 'dw4elementor-admin-styles' ];
 	}
 	
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve oEmbed widget name.
+	 * Retrieve Donation History widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -37,7 +30,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve oEmbed widget title.
+	 * Retrieve Donation History widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -51,7 +44,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	/**
 	 * Get widget icon.
 	 *
-	 * Retrieve oEmbed widget icon.
+	 * Retrieve Donation History widget icon.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -65,7 +58,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	/**
 	 * Get widget categories.
 	 *
-	 * Retrieve the list of categories the oEmbed widget belongs to.
+	 * Retrieve the list of categories the Donation History widget belongs to.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -77,7 +70,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	}
 
 	/**
-	 * Register oEmbed widget controls.
+	 * Register Donation History widget controls.
 	 *
 	 * Adds different input fields to allow the user to change and customize the widget settings.
 	 *

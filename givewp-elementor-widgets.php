@@ -305,8 +305,11 @@ final class GiveWP_DW_4_Elementor {
 		// Register Receipt widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Receipt_Widget() );
 
-		// Register Receipt widget
+		// Register Totals widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Totals_Widget() );
+
+		// Register Register widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Register_Widget() );
 
     }
 

@@ -194,6 +194,18 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'status_notice',
+			[
+				'label' => __( 'Payment Status Notice', 'dw4elementor' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'description' => __( 'Show or hide an alert above the receipt table showing the status of the donation payment.', 'dw4elementor' ),
+				'label_on' => __( 'Show', 'dw4elementor' ),
+				'label_off' => __( 'Hide', 'dw4elementor' ),
+				'default' => 'yes'
+			]
+		);
+
+		$this->add_control(
 			'raw_notice',
 			[
 				'label' => '',
@@ -215,6 +227,8 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
+
+		global $give_receipt_args, $donation;
 
 		$settings = $this->get_settings_for_display();
 
@@ -251,20 +265,23 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 
 		echo '</div>';
 
-		} else { ?>
+		} else { 
+			do_action( 'give_payment_receipt_header_before', $donation, $give_receipt_args );
+			?>
 			<div id="give-receipt">
 				<div class="give_notices give_errors" id="give_error_fail">
 					<p class="give_notice give_error">
-						<?php echo $error; ?>
+						<?php echo (!empty($error) ? $error : __('You are missing the donation ID to view this donation receipt.', 'dw4elementor')); ?>
 					</p>		
 				</div>
 				<?php if ( 'yes' == $settings['status_notice'] ) : ?>
 				<div class="give_notices give_errors" id="give_error_success">
 					<p class="give_notice give_success">
-						<?php echo $success; ?>
+						<?php echo (!empty($success) ? $success : __('Thank you for your donation.', 'dw4elementor')); ?>
 					</p>		
 				</div>
 				<?php endif; ?>
+				<?php do_action( 'give_payment_receipt_before_table', $donation, $give_receipt_args ); ?>
 			<table id="give_donation_receipt" class="give-table">
 				<thead>
 					<tr>
@@ -325,6 +342,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 					<?php endif; ?>
 				</tbody>
 			</table>
+			<?php do_action( 'give_payment_receipt_after_table', $donation, $give_receipt_args ); ?>
 		</div>
 		<? }
 	}

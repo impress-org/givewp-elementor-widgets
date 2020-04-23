@@ -112,6 +112,10 @@ final class GiveWP_DW_4_Elementor {
 			define( 'GiveWP_DW_4_Elementor_DIR', plugin_dir_path( GiveWP_DW_4_Elementor_FILE ) );
 		}
 
+		if ( ! defined( 'GiveWP_DW_4_Elementor_Widgets_Folder' ) ) {
+			define( 'GiveWP_DW_4_Elementor_Widgets_Folder', plugin_dir_path( GiveWP_DW_4_Elementor_FILE ) . '/widgets/' );
+		}
+
 		if ( ! defined( 'GiveWP_DW_4_Elementor_URL' ) ) {
 			define( 'GiveWP_DW_4_Elementor_URL', plugin_dir_url( GiveWP_DW_4_Elementor_FILE ) );
 		}
@@ -273,7 +277,6 @@ final class GiveWP_DW_4_Elementor {
 	 */
 	private function load_files() {
 		require_once GiveWP_DW_4_Elementor_DIR . 'includes/helper-functions.php';
-		//require_once GiveWP_DW_4_Elementor_DIR . 'includes/settings-screen.php';
 	}
     
     /**
@@ -288,12 +291,22 @@ final class GiveWP_DW_4_Elementor {
 	public function init_widgets() {
 
 		// Include Widget files
-		require_once( GiveWP_DW_4_Elementor_DIR . '/widgets/donation_history.php' );
-		require_once( GiveWP_DW_4_Elementor_DIR . '/widgets/give_receipt.php' );
+		$dir = GiveWP_DW_4_Elementor_Widgets_Folder; 
 
-		// Register widgets
+		$files = glob($dir . '/*.php');
+
+		foreach ($files as $file) {
+			require($file);   
+		}
+
+		// Register Donation History widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_Donation_History_Widget() );
+
+		// Register Receipt widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Receipt_Widget() );
+
+		// Register Receipt widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Totals_Widget() );
 
     }
 

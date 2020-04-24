@@ -314,6 +314,9 @@ final class GiveWP_DW_4_Elementor {
 		// Register Login widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Login_Widget() );
 
+		// Register Profile Editor widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Profile_Editor_Widget() );
+
     }
 
 	// editor styles

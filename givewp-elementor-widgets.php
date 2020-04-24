@@ -311,6 +311,9 @@ final class GiveWP_DW_4_Elementor {
 		// Register Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Register_Widget() );
 
+		// Register Login widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \DW4Elementor_GiveWP_Login_Widget() );
+
     }
 
 	// editor styles

@@ -31,3 +31,15 @@
 .dw4e-notice-warning .notice-message {
     line-height: 1.25;
 }
+
+/*
+ * Hide Link Options 
+ * Until this issue is resolved:
+ * https://github.com/elementor/elementor/issues/11214
+ * 
+ */
+
+.elementor-control-give_register_settings + .elementor-control-link .elementor-control-url-more,
+.elementor-control-give_login_settings + .elementor-control-login_url .elementor-control-url-more {
+     display: none;
+ }

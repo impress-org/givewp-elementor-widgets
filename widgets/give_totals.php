@@ -80,7 +80,7 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 	protected function _register_controls() {
 
 		$this->start_controls_section(
-			'content_section',
+			'give_totals_settings',
 			[
 				'label' => __( 'Give Totals Arguments', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,

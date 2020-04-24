@@ -80,7 +80,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 	protected function _register_controls() {
 
 		$this->start_controls_section(
-			'content_section',
+			'donation_history_settings',
 			[
 				'label' => __( 'Donation History Arguments', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,

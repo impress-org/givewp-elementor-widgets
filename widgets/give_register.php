@@ -80,7 +80,7 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 	protected function _register_controls() {
 
 		$this->start_controls_section(
-			'content_section',
+			'give_register_settings',
 			[
 				'label' => __( 'Give Register Arguments', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -95,7 +95,7 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 				'description' => __( 'The url of where you want to link donors to encourage them to donate toward the goal.', 'dw4elementor' ),
 				'show_external' => false,
 				'default' => [
-					'url' => 'https://example.org',
+					'url' => '',
 					'is_external' => false,
 					'nofollow' => false,
 				],

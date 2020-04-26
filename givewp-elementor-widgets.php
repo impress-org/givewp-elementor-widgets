@@ -325,6 +325,9 @@ final class GiveWP_DW_4_Elementor
 
 		// Register Profile Editor widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Profile_Editor_Widget());
+
+		// Register Donor Wall widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Donor_Wall_Widget());
 	}
 
 	// editor styles

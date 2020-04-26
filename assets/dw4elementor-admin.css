@@ -48,10 +48,16 @@
     background: #3c763d;
 }
 
-
-
 .dw4e-notice-warning .notice-message {
     line-height: 1.25;
+}
+
+.elementor-control-all_forms .elementor-choices input:checked+[data-tooltip="Yes"] {
+    background: #8BC34A;
+}
+
+.elementor-control-all_forms .elementor-choices input:checked+[data-tooltip="No"] {
+    background: #c13f16;
 }
 
 /*

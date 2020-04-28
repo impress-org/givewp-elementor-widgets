@@ -7,27 +7,6 @@
     font-style: normal;
 }
 
-.elementor-control-content .elementor-control-raw-html [class*="dw4e-notice"] {
-    position: relative;
-    padding-top: 2.5rem;
-    margin: 10px 0px;
-    padding: 2.25rem 0.85rem 0.85rem;
-}
-
-.elementor-control-content .elementor-control-raw-html [class*="dw4e-notice"] .notice-head {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 0.5rem;
-    text-align: center;
-    font-weight: 700;
-}
-
-.elementor-control-content .elementor-control-raw-html [class*="dw4e-notice"] .notice-message {
-    line-height: 1.25;
-}
-
 [class*="elementor-control"] .dw4e-info {
     background-color: #68bb6c;
     color: white;
@@ -66,30 +45,6 @@
     margin: 0 10px 0 0;
     color: white;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-}
-
-.dw4e-notice-warning {
-    color: #9F6000;
-    background-color: #FEEFB3; 
-}
-
-.dw4e-notice-warning .notice-head {
-    color: white;
-    background: #9F6000;
-}
-
-.dw4e-notice-success {
-    color: #3c763d;
-    background-color: #dff0d8; 
-}
-
-.dw4e-notice-success .notice-head {
-    color: white;
-    background: #3c763d;
-}
-
-.dw4e-notice-warning .notice-message {
-    line-height: 1.25;
 }
 
 .elementor-control-all_forms .elementor-choices input:checked+[data-tooltip="Yes"] {

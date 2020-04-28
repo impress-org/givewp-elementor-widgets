@@ -28,6 +28,45 @@
     line-height: 1.25;
 }
 
+[class*="elementor-control"] .dw4e-info {
+    background-color: #68bb6c;
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+    line-height: 1.5;
+    position: relative;
+}
+
+[class*="elementor-control"] .dw4e-info .info-head {
+    line-height: 2;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px rgba(50,50,50,0.5);
+}
+
+[class*="elementor-control"] .dw4e-info .dw4e-docs-links {
+    position: relative;
+    width: calc(100% + 24px);
+    left: -12px;
+    bottom: -12px;
+    padding: 12px;
+    border-radius: 0  0 10px 10px;
+    background-color: #a4d6a6;
+}
+
+[class*="elementor-control"] .dw4e-info .dw4e-docs-links a {
+    color: #333;
+    line-height: 1.15rem;
+}
+
+[class*="elementor-control"] .dw4e-info .dw4e-docs-links a i {
+    font-size: 2rem;
+    display: block;
+    float: left;
+    margin: 0 10px 0 0;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
 .dw4e-notice-warning {
     color: #9F6000;
     background-color: #FEEFB3; 

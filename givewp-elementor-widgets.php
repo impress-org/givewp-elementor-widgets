@@ -331,6 +331,9 @@ final class GiveWP_DW_4_Elementor
 
 		// Register Give Goal widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Goal_Widget());
+
+		// Register Give Goal widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Form_Widget());
 	}
 
 	// editor styles

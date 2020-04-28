@@ -88,24 +88,6 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'give_form_info',
-			[
-				'label' => '',
-				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'content_classes' => 'dw4e-info',
-				'raw' => '
-					<div class="dw4e">
-						<p class="info-head">
-							' . __('GIVEWP FORM WIDGET', 'dw4elementor') . '</p>
-						<p class="info-message">' . __('This is the GiveWP Form widget. Choose which form you want to embed on this page with it\'s form "ID".', 'dw4elementor') . '</p>
-						<p class="dw4e-docs-links">
-							<a href="https://givewp.com/documentation/core/shortcodes/give_form/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Form.', 'dw4elementor') . '</a>
-						</p>
-				</div>'
-			]
-		);
-
-		$this->add_control(
 			'form_id',
 			[
 				'label' => __( 'Form ID', 'dw4elementor' ),
@@ -180,6 +162,24 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base {
 				'condition' => [
 					'display_style!' => 'onpage',
 				]
+			]
+		);
+
+		$this->add_control(
+			'give_form_info',
+			[
+				'label' => '',
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP FORM WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Form widget. Choose which form you want to embed on this page with it\'s form "ID".', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/give_form/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Form.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

@@ -82,7 +82,7 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'give_register_settings',
 			[
-				'label' => __( 'Give Register Arguments', 'dw4elementor' ),
+				'label' => __( 'GiveWP Register Widget', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -92,7 +92,7 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 			[
 				'label' => __( 'Link', 'dw4elementor' ),
 				'type' => \Elementor\Controls_Manager::URL,
-				'description' => __( 'The url of where you want to link donors to encourage them to donate toward the goal.', 'dw4elementor' ),
+				'description' => __( 'The url you want to redirect users to after they submit the registration form.', 'dw4elementor' ),
 				'show_external' => false,
 				'default' => [
 					'url' => '',
@@ -103,11 +103,21 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'raw_notice',
+			'give_register_info',
 			[
 				'label' => '',
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => '<div class="dw4e-notice-warning"><p class="notice-head"><i class="eicon-warning" aria-hidden="true"></i> ' . __('NOTE', 'dw4elementor') . '</p><p class="notice-message">' . __('This is a sample register form with all fields exposed. This is only to help position and style the form with Elementor. If you want to see the live form, go to this page while logged out or in an Icognito browser.', 'dw4elementor') . '</p></div>'
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP REGISTER WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Register widget. Allow your visitors to register on your website.', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is a sample register form with all fields exposed. This is only to help position and style the form with Elementor. If you want to see the live form, go to this page while logged out or in an Icognito browser.', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/give_register/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Register feature.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

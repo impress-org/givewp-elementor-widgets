@@ -90,7 +90,7 @@ class DW4Elementor_GiveWP_Login_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'give_login_settings',
 			[
-				'label' => __('Give Login Arguments', 'dw4elementor'),
+				'label' => __('GiveWP Login Widget', 'dw4elementor'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -105,11 +105,21 @@ class DW4Elementor_GiveWP_Login_Widget extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
-			'raw_notice',
+			'give_form_info',
 			[
 				'label' => '',
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => '<div class="dw4e-notice-warning"><p class="notice-head"><i class="eicon-warning" aria-hidden="true"></i> ' . __('NOTE', 'dw4elementor') . '</p><p class="notice-message">' . __('This is a sample Login form with all fields exposed. This is only to help position and style the form with Elementor. If you want to see the live form, go to this page while logged out or in an Icognito browser.', 'dw4elementor') . '</p></div>'
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP LOGIN WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Login widget.', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is a sample Login form with all fields exposed. This is only to help position and style the form with Elementor. If you want to see the live form, go to this page while logged out or in an Icognito browser.', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/give_login/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Login.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

@@ -82,7 +82,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'donation_history_settings',
 			[
-				'label' => __( 'Donation History Arguments', 'dw4elementor' ),
+				'label' => __( 'Donation History Widget', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -156,6 +156,24 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 				'label_on' => __( 'Show', 'dw4elementor' ),
 				'label_off' => __( 'Hide', 'dw4elementor' ),
 				'default' => 'no'
+			]
+		);
+
+		$this->add_control(
+			'give_history_info',
+			[
+				'label' => '',
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP DONATION HISTORY WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Donation History widget. Choose which columns you want to have appear for your donors history.', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/donation_history/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Donation History.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

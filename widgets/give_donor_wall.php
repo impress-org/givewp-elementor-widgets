@@ -82,7 +82,7 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'give_donor_wall_settings',
 			[
-				'label' => __( 'Give Donor Wall Arguments', 'dw4elementor' ),
+				'label' => __( 'GiveWP Donor Wall Widget', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -317,6 +317,24 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 				'description' => __( 'The text that appears on the "Read More" link if your donor comments are truncated because of the comment length.', 'dw4elementor' ),
 				'label_block' => true,
 				'default' => 'Read more',
+			]
+		);
+
+		$this->add_control(
+			'give_donor_wall_info',
+			[
+				'label' => '',
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP DONOR WALL WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Donor Wall widget. Choose the elements you want to see appear in the donor wall. Note that the live preview only works if you have existing donors to display.', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/give_donor_wall/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Donor Wall.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

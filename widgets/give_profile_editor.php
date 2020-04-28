@@ -90,17 +90,26 @@ class DW4Elementor_GiveWP_Profile_Editor_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'give_profile_editor_settings',
 			[
-				'label' => __('Give Profile Editor Arguments', 'dw4elementor'),
+				'label' => __('GiveWP Profile Editor Widget', 'dw4elementor'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control(
-			'raw_notice',
+			'give_profile_editor_info',
 			[
 				'label' => '',
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw' => '<div class="dw4e-notice-success"><p class="notice-head"><i class="eicon-alert" aria-hidden="true"></i> ' . __('NOTE', 'dw4elementor') . '</p><p class="notice-message">' . __('The Profile Editor has no settings at all, just drop it on your page and it\'s ready to go.', 'dw4elementor') . '</p></div>'
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP PROFILE EDITOR WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Profile Editor widget. The Profile Editor has no settings at all, just drop it on your page and it\'s ready to go.', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/give_profile_editor/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Profile Editor.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

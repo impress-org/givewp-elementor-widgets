@@ -82,7 +82,7 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'give_totals_settings',
 			[
-				'label' => __( 'Give Totals Arguments', 'dw4elementor' ),
+				'label' => __( 'GiveWP Totals Widget', 'dw4elementor' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -175,6 +175,24 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 				'label' => __( 'Tags', 'dw4elementor' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'description' => __( 'Comma separated list of GiveWP tag IDs you want to combine into this total.', 'dw4elementor' ),
+			]
+		);
+
+		$this->add_control(
+			'give_totals_info',
+			[
+				'label' => '',
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP TOTALS WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Totals widget. Use this to display a total of one or many forms.', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/give_totals/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Totals.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

@@ -90,7 +90,7 @@ class DW4Elementor_GiveWP_Goal_Widget extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'give_login_settings',
 			[
-				'label' => __('Give Goal Arguments', 'dw4elementor'),
+				'label' => __('GiveWP Goal Widget', 'dw4elementor'),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -125,6 +125,24 @@ class DW4Elementor_GiveWP_Goal_Widget extends \Elementor\Widget_Base
 				'label_on' => __( 'Show', 'dw4elementor' ),
 				'label_off' => __( 'Hide', 'dw4elementor' ),
 				'default' => 'yes'
+			]
+		);
+
+		$this->add_control(
+			'give_goal_info',
+			[
+				'label' => '',
+				'type' => \Elementor\Controls_Manager::RAW_HTML,
+				'content_classes' => 'dw4e-info',
+				'raw' => '
+					<div class="dw4e">
+						<p class="info-head">
+							' . __('GIVEWP GOAL WIDGET', 'dw4elementor') . '</p>
+						<p class="info-message">' . __('This is the GiveWP Goal widget. Choose how you want your form goal to be displayed. Note that this widget only supports forms that have a goal enabled. If you want to show progress of any form or multiple forms, use the "GiveWP Totals" widget instead.', 'dw4elementor') . '</p>
+						<p class="dw4e-docs-links">
+							<a href="https://givewp.com/documentation/core/shortcodes/give_goal/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Goal.', 'dw4elementor') . '</a>
+						</p>
+				</div>'
 			]
 		);
 

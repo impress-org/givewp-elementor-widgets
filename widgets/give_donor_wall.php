@@ -107,11 +107,11 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 				'description' => __( 'Do you want to show all donors here, or choose one form?', 'dw4elementor' ),
 				'options' => [
 					'yes' => [
-						'title' => __( 'Yes', 'plugin-domain' ),
+						'title' => __( 'Yes', 'dw4elementor' ),
 						'icon' => 'fa fa-check',
 					],
 					'no' => [
-						'title' => __( 'No', 'plugin-domain' ),
+						'title' => __( 'No', 'dw4elementor' ),
 						'icon' => 'fa fa-times-circle',
 					],
 				],

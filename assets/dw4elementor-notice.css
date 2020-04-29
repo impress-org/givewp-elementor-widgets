@@ -1,0 +1,61 @@
+.dw4elementor-review {
+    position: relative;
+    padding: 2px 0 12px 80px;
+    
+}
+.dw4elementor-review i.dashicons-heart {
+    color: white;
+    background: #66BB6A;
+    position: absolute;
+    left: 0;
+    padding: 1rem 2rem 1rem 1rem;
+    top: 0;
+    bottom: 0;
+    height: calc(100% - 2rem);
+    line-height: 3rem;
+    font-size: 2rem;
+}
+
+p.dw4elementor-review strong {
+    color: #66BB6A;
+}
+p.dw4elementor-review a.dismiss {
+    float: right;
+    text-decoration: none;
+    color: #66BB6A;
+}
+
+.dw4elementor-review ._form_element {
+    display: inline-block;
+}
+
+.dw4elementor-review ._form_element label {
+    display: none;
+}
+
+.dw4elementor-review ._button-wrapper._inline-style {
+    display: inline-block;
+}
+
+.dw4elementor-review button[type="submit"] {
+    background: #66BB6A;
+    color: white;
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.dw4elementor-review button[type="submit"]:hover {
+    background: #8ed492
+}
+
+.dw4elementor-review a.dismiss {
+    float: right;
+    text-decoration: none;
+    color: #ccc;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}

@@ -251,7 +251,7 @@ final class GiveWP_DW_4_Elementor
 		$locale = apply_filters('plugin_locale', $locale, 'dw4elementor');
 
 		unload_textdomain('dw4elementor');
-		load_textdomain('dw4elementor', WP_LANG_DIR . '/donation-widgets-for-elementor/' . $locale . '.mo');
+		load_textdomain('dw4elementor', WP_LANG_DIR . '/givewp-donation-widgets-for-elementor/' . $locale . '.mo');
 		load_plugin_textdomain('dw4elementor', false, $give_lang_dir);
 	}
 

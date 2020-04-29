@@ -88,7 +88,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'id',
+			'form_id',
 			[
 				'label' => __( 'ID', 'dw4elementor' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -193,7 +193,7 @@ class DW4Elementor_Donation_History_Widget extends \Elementor\Widget_Base {
 
 		$settings = $this->get_settings_for_display();
 
-		$id = ('yes' === $settings['id'] ? '' : 'id="false"');
+		$id = ('yes' === $settings['form_id'] ? '' : 'id="false"');
 		$donor = ('yes' === $settings['donor'] ? 'donor="true"' : '' );
 		$date = ('yes' === $settings['date'] ? '' : 'date="false"' );
 		$amount = ('yes' === $settings['amount'] ? '' : 'amount="false"' );

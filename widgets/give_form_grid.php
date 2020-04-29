@@ -127,7 +127,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'ids',
+			'form_ids',
 			[
 				'label' => __( 'Show by Form IDs', 'dw4elementor' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
@@ -345,7 +345,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 
 		$settings = $this->get_settings_for_display();
 
-		$forms = ( 'yes' === $settings['all_forms'] ? '' : $settings['ids']);
+		$forms = ( 'yes' === $settings['all_forms'] ? '' : $settings['form_ids']);
 		$paged = esc_html( $settings['forms_per_page'] );
 		$columns = esc_html( $settings['columns'] );
 		$orderby = esc_html( $settings['orderby'] );

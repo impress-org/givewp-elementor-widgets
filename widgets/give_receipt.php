@@ -158,7 +158,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'id',
+			'payment_id',
 			[
 				'label' => __( 'Payment ID', 'dw4elementor' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -248,7 +248,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 		$donor = ('yes' === $settings['donor'] ? '' : 'donor="false"' );
 		$date = ('yes' === $settings['date'] ? '' : 'date="false"' );
 		$method = ('yes' === $settings['method'] ? '' : 'payment_method="false"' );
-		$id = ('yes' === $settings['id'] ? '' : 'payment_id="false"');
+		$id = ('yes' === $settings['payment_id'] ? '' : 'payment_id="false"');
 		$status = ('yes' === $settings['status'] ? 'payment_status="true"' : '' );
 		$company = ('yes' === $settings['company'] ? 'company_name="true"' : '' );
 		$notice = ('yes' === $settings['status_notice'] ? '' : 'status_notice="false"');

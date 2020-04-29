@@ -197,8 +197,8 @@ final class GiveWP_DW_4_Elementor
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'elementor-test-extension'),
-			'<strong>' . esc_html__('Elementor Test Extension', 'elementor-test-extension') . '</strong>',
+			esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'dw4elementor'),
+			'<strong>' . esc_html__('GiveWP Donation Widgets for Elementor', 'dw4elementor') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'elementor-test-extension') . '</strong>'
 		);
 
@@ -221,9 +221,9 @@ final class GiveWP_DW_4_Elementor
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-test-extension'),
-			'<strong>' . esc_html__('Elementor Test Extension', 'elementor-test-extension') . '</strong>',
-			'<strong>' . esc_html__('Elementor', 'elementor-test-extension') . '</strong>',
+			esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'dw4elementor'),
+			'<strong>' . esc_html__('GiveWP Donation Widgets for Elementor', 'dw4elementor') . '</strong>',
+			'<strong>' . esc_html__('Elementor', 'dw4elementor') . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 

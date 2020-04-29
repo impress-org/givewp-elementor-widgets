@@ -2,17 +2,14 @@
 
 /**
  * Plugin Name: 	GiveWP Donation Widgets for Elementor
- * Plugin URI: 		https://givewp.com
- * Description: 	Add all GiveWP shortcode options as Elementor Widgets
+ * Plugin URI: 		https://givewp.com/givewp-elementor-widgets
+ * Description: 	All GiveWP shortcodes as Elementor Widgets
  * Version: 		1.0
  * Author: 			GiveWP 
  * Author URI: 		https://givewp.com
  * License:      	GNU General Public License v2 or later
  * License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:		dw4elementor
- * 
- * NOTE: Most of this code was forked from FooGallery, and it's Extension Generator. 
- * Big props to Brad Vincent (@bradvin) for building a very useful, open source tool like this
  *
  */
 

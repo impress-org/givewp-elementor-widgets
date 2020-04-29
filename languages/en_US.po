@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Project-Id-Version: Donation Widgets for Elementor and GiveWP\n"
-"POT-Creation-Date: 2020-04-28 17:22-0700\n"
-"PO-Revision-Date: 2020-04-28 17:24-0700\n"
+"Project-Id-Version: GiveWP Donation Widgets for Elementor\n"
+"POT-Creation-Date: 2020-04-28 21:19-0700\n"
+"PO-Revision-Date: 2020-04-28 21:19-0700\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,23 +22,31 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #. translators: 1: Plugin name 2: Elementor
-#: givewp-elementor-widgets.php:200
+#: givewp-elementor-widgets.php:222
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
 msgstr ""
 
-#: givewp-elementor-widgets.php:201 givewp-elementor-widgets.php:225
+#. Plugin Name of the plugin/theme
+#: givewp-elementor-widgets.php:223 givewp-elementor-widgets.php:247
 msgid "GiveWP Donation Widgets for Elementor"
 msgstr ""
 
-#: givewp-elementor-widgets.php:202 givewp-elementor-widgets.php:226
+#: givewp-elementor-widgets.php:224 givewp-elementor-widgets.php:248
 msgid "Elementor"
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
-#: givewp-elementor-widgets.php:224
+#: givewp-elementor-widgets.php:246
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: includes/admin/notice.php:67
+msgid ""
+"Hey, you've been using \"GiveWP Donation Widgets for Elementor\" for a while "
+"now. We have some other free things in the GiveWP Newsletter that we think "
+"you'll love."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -937,10 +945,6 @@ msgstr ""
 
 #: widgets/give_totals.php:193
 msgid "Visit the GiveWP Docs for more info on the GiveWP Totals."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Donation Widgets for Elementor and GiveWP"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

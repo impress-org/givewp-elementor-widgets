@@ -354,6 +354,6 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 			</table>
 			<?php do_action( 'give_payment_receipt_after_table', $donation, $give_receipt_args ); ?>
 		</div>
-		<? }
+		<?php }
 	}
 }

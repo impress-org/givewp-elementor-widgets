@@ -238,8 +238,6 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-		global $give_receipt_args, $donation;
-
 		$settings = $this->get_settings_for_display();
 
 		$error = esc_html( $settings['error'] );
@@ -252,6 +250,11 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 		$status = ('yes' === $settings['status'] ? 'payment_status="true"' : '' );
 		$company = ('yes' === $settings['company'] ? 'company_name="true"' : '' );
 		$notice = ('yes' === $settings['status_notice'] ? '' : 'status_notice="false"');
+
+		// Add-on compatibility
+		// Adding PDF Receipt row, and Subscription table
+		$pdfreceipts = ( class_exists( 'Give_PDF_Receipts' ) ) ? "true" : "false";
+		$recurring = ( class_exists( 'Give_Recurring' ) ) ? "true" : "false";
 		
 		if ( ! \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 
@@ -276,7 +279,6 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 		echo '</div>';
 
 		} else { 
-			do_action( 'give_payment_receipt_header_before', $donation, $give_receipt_args );
 			?>
 			<div id="give-receipt">
 				<div class="give_notices give_errors" id="give_error_fail">
@@ -291,69 +293,114 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 					</p>		
 				</div>
 				<?php endif; ?>
-				<?php do_action( 'give_payment_receipt_before_table', $donation, $give_receipt_args ); ?>
-			<table id="give_donation_receipt" class="give-table">
-				<thead>
-					<tr>
-						<th scope="colgroup" colspan="2">
-							<span class="give-receipt-thead-text">Donation Receipt</span>
-						</th>
-					</tr>
-				</thead>
+				<table id="give_donation_receipt" class="give-table">
+					<thead>
+						<tr>
+							<th scope="colgroup" colspan="2">
+								<span class="give-receipt-thead-text"><?php _e('Donation Receipt', 'dw4elementor'); ?></span>
+							</th>
+						</tr>
+					</thead>
 
-				<tbody>
-					<?php 
-					if ( 'yes' == $settings['donor'] ) : ?>
-					<tr>
-						<td scope="row"><strong>Donor</strong></td>
-						<td>Test Donor</td>
-					</tr>
-					<?php endif; 
-					if ( 'yes' == $settings['company'] ) : ?>
-					<tr>
-						<td scope="row"><strong>Company Name</strong></td>
-						<td>Impress.org</td>
-					</tr>
-					<?php endif; 
-					if ( 'yes' == $settings['date'] ) : ?>
-					<tr>
-						<td scope="row"><strong>Date</strong></td>
-						<td>April 18, 2020</td>
-					</tr>
-					<?php endif; 
-					if ( 'yes' == $settings['price'] ) : ?>
-					<tr>
-						<td scope="row"><strong>Total Donation</strong></td>
-						<td>$25.00</td>
-					</tr>
-					<?php endif; ?>
-					<tr>
-						<td scope="row"><strong>Donation</strong></td>
-						<td>First Form<span class="donation-level-text-wrap"></span></td>
-					</tr>
-					<?php 
-					if ( 'yes' == $settings['status'] ) : ?>
-					<tr>
-						<td scope="row"><strong>Donation Status</strong></td>
-						<td>Complete</td>
-					</tr>
-					<?php endif; 
-					if ( 'yes' == $settings['id'] ) : ?>
-					<tr>
-						<td scope="row"><strong>Donation ID</strong></td>
-						<td>3</td>
-					</tr>
-					<?php endif; 
-					if ( 'yes' == $settings['method'] ) : ?>
-					<tr>
-						<td scope="row"><strong>Payment Method</strong></td>
-						<td>Test Donation</td>
-					</tr>	
-					<?php endif; ?>
-				</tbody>
-			</table>
-			<?php do_action( 'give_payment_receipt_after_table', $donation, $give_receipt_args ); ?>
-		</div>
-		<?php }
+					<tbody>
+						<?php 
+						if ( 'yes' == $settings['donor'] ) : ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Donor', 'dw4elementor'); ?></strong></td>
+							<td><?php _e('Test Donor', 'dw4elementor'); ?></td>
+						</tr>
+						<?php endif; 
+						if ( 'yes' == $settings['company'] ) : ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Company Name', 'dw4elementor') ;?></strong></td>
+							<td>Impress.org</td>
+						</tr>
+						<?php endif; 
+						if ( 'yes' == $settings['date'] ) : ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Date', 'dw4elementor'); ?></strong></td>
+							<td><?php _e('April 18, 2020' , 'dw4elementor') ;?></td>
+						</tr>
+						<?php endif; 
+						if ( 'yes' == $settings['price'] ) : ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Total Donation' ,'dw4elementor'); ?></strong></td>
+							<td>$25.00</td>
+						</tr>
+						<?php endif; ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Donation' , 'dw4elementor'); ?></strong></td>
+							<td><?php _e('First Form', 'dw4elementor'); ?><span class="donation-level-text-wrap"></span></td>
+						</tr>
+						<?php 
+						if ( 'yes' == $settings['status'] ) : ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Donation Status', 'dw4elementor'); ?></strong></td>
+							<td><?php _e('Complete', 'dw4elementor'); ?></td>
+						</tr>
+						<?php endif; 
+						if ( 'yes' == $settings['payment_id'] ) : ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Donation ID', 'dw4elementor');?></strong></td>
+							<td>3</td>
+						</tr>
+						<?php endif; 
+						if ( 'yes' == $settings['method'] ) : ?>
+						<tr>
+							<td scope="row"><strong><?php _e('Payment Method' , 'dw4elementor'); ?></strong></td>
+							<td><?php _e('Test Donation', 'dw4elementor'); ?></td>
+						</tr>	
+						<?php endif; 
+						if ( 'true' == $pdfreceipts ) : ?>
+						<tr>
+							<td><strong><?php _e('Receipt', 'dw4elementor'); ?>:</strong></td>
+							<td><a class="give_receipt_link" title="Download Receipt" href="#"><?php _e('Download Receipt', 'dw4elementor');?> »</a></td>
+						</tr>
+						<?php endif;?>
+					</tbody>
+				</table>
+
+				<?php if ( 'true' == $recurring ) : ?>
+				<table id="give-subscription-receipt" class="give-table">
+
+					<thead>
+						<tr>
+							<th scope="colgroup" colspan="2">
+								<span class="give-receipt-thead-text"><?php _e('Subscription Details', 'dw4elementor'); ?></span>
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					
+						<tr>
+							<td scope="row"><strong><?php _e('Subscription:', 'dw4elementor'); ?></strong></td>
+							<td>
+								<span class="give-subscription-billing-cycle">$25.00 / <?php _e('Monthly', 'dw4elementor'); ?></span>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row"><strong><?php _e('Status:', 'dw4elementor'); ?></strong></td>
+							<td>
+								<span class="give-subscription-status"><span class="give-donation-status status-active"><span class="give-donation-status-icon"></span> <?php _e('Active', 'dw4elementor'); ?></span></span>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row"><strong><?php _e('Renewal Date:', 'dw4elementor'); ?></strong></td>
+							<td><span class="give-subscription-renewal-date"><?php _e('June 4, 2020', 'dw4elementor'); ?></span></td>
+						</tr>
+						<tr>
+							<td scope="row"><strong><?php _e('Progress:', 'dw4elementor'); ?></strong></td>
+							<td><span class="give-subscription-times-billed">1 / <?php _e('Ongoing', 'dw4elementor'); ?></span>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+				<a href="#" class="give-recurring-manage-subscriptions-receipt-link"><?php _e('Manage Subscriptions', 'dw4elementor'); ?> »</a>
+			</div>
+		<?php 
+		 endif; // End if Recurring Donations is active.
+		}
 	}
 }

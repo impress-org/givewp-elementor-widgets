@@ -355,6 +355,11 @@ final class GiveWP_DW_4_Elementor
 
 		// Register Give Goal widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Form_Grid_Widget());
+
+		if ( class_exists('Give_Recurring')) {
+			// Register Give Goal widget
+			\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Subscriptions_Widget());
+		}
 	}
 
 	/**

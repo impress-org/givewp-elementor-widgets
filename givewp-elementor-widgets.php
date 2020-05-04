@@ -4,7 +4,7 @@
  * Plugin Name: 	GiveWP Donation Widgets for Elementor
  * Plugin URI: 		https://givewp.com/givewp-elementor-widgets
  * Description: 	All GiveWP shortcodes as Elementor Widgets
- * Version: 		1.0
+ * Version: 		1.1
  * Author: 			GiveWP 
  * Author URI: 		https://givewp.com
  * License:      	GNU General Public License v2 or later

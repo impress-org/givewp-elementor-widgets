@@ -4,7 +4,7 @@ Donate link: https://github.com/impress-org/givewp-elementor-widgets
 Tags: givewp, elementor, widgets, donations, fundraising,
 Requires at least: 5.0
 Tested up to: 5.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires Give: 2.5.0
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -29,7 +29,9 @@ No more fidgeting with shortcode args or comparing docs. Just use the Donation E
 * GiveWP Donation History Widget 
 * GiveWP Registration Widget 
 * GiveWP Login Widget 
-* GiveWP Profile Editor Widget 
+* GiveWP Profile Editor Widget
+* GiveWP Subscriptions Table (for Recurring Donations add-on)
+
 
 **BASIC USAGE**
 
@@ -48,14 +50,6 @@ Add-ons like "GiveWP Donation Widgets for Elementor" are a way that we are givin
 = This sounds great, but what is GiveWP? =
 
 [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
-
-= My form also has a Goal. How do these work together? =
-
-The goal and the countdown clock work indepent from each other, generally speaking. This allows you to show the clock for as long as your goal is active, or even after the goal is reached. The one exception is if you chose to close the form after your goal is achieved. In that case the countdown clock will not appear, and instead your goal achieved message will appear alone. 
-
-= How can I test the completion message? =
-
-The easiest way is to manually change the date of your duration to be in the past. If you are comfortable with code, there is a line in the main template file intended just for testing which sets the countdown clock at 5 seconds from the present. 
 
 = Where can I submit Support Questions? =
 
@@ -103,7 +97,17 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 == Changelog ==
 
+### 1.1.0 May 4, 2020 ###
+**Enhancements**
+
+* Added PDF Receipts row to the donation receipt table if [PDF Receipts](https://givewp.com/addons/pdf-receipts/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) is active.
+* Added the `give_subscriptions` widget when [GiveWP Recurring Donations](https://givewp.com/addons/recurring-donations/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) is active.
+
+**Bug Fixes**
+
+* [Removed PHP shorttag to prevent fatal error for some users](https://github.com/impress-org/givewp-elementor-widgets/issues/6). 
+
 ### 1.0.0 May 1, 2020 ###
 Initial Release!!
 
-* Launched supporting all 10 GiveWP shortcodes
+* Launched supporting all 10 GiveWP Core shortcodes

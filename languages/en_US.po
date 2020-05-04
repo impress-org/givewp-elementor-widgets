@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: GiveWP Donation Widgets for Elementor\n"
-"POT-Creation-Date: 2020-04-28 21:19-0700\n"
-"PO-Revision-Date: 2020-04-28 21:19-0700\n"
+"POT-Creation-Date: 2020-05-04 16:37-0700\n"
+"PO-Revision-Date: 2020-05-04 16:37-0700\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,22 +22,22 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #. translators: 1: Plugin name 2: Elementor
-#: givewp-elementor-widgets.php:222
+#: givewp-elementor-widgets.php:219
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: givewp-elementor-widgets.php:223 givewp-elementor-widgets.php:247
+#: givewp-elementor-widgets.php:220 givewp-elementor-widgets.php:244
 msgid "GiveWP Donation Widgets for Elementor"
 msgstr ""
 
-#: givewp-elementor-widgets.php:224 givewp-elementor-widgets.php:248
+#: givewp-elementor-widgets.php:221 givewp-elementor-widgets.php:245
 msgid "Elementor"
 msgstr ""
 
 #. translators: 1: Plugin name 2: Elementor 3: Required Elementor version
-#: givewp-elementor-widgets.php:246
+#: givewp-elementor-widgets.php:243
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
@@ -54,25 +54,25 @@ msgstr ""
 msgid "GiveWP"
 msgstr ""
 
-#: widgets/donation_history.php:41
+#: widgets/donation_history.php:46
 msgid "Donation History"
 msgstr ""
 
-#: widgets/donation_history.php:85
+#: widgets/donation_history.php:93
 msgid "Donation History Widget"
 msgstr ""
 
-#: widgets/donation_history.php:93
+#: widgets/donation_history.php:101
 msgid "ID"
 msgstr ""
 
-#: widgets/donation_history.php:95
+#: widgets/donation_history.php:103
 msgid "Show or hide the \"ID\" column."
 msgstr ""
 
-#: widgets/donation_history.php:96 widgets/donation_history.php:108
-#: widgets/donation_history.php:120 widgets/donation_history.php:132
-#: widgets/donation_history.php:144 widgets/donation_history.php:156
+#: widgets/donation_history.php:104 widgets/donation_history.php:116
+#: widgets/donation_history.php:128 widgets/donation_history.php:140
+#: widgets/donation_history.php:152 widgets/donation_history.php:164
 #: widgets/give_donor_wall.php:187 widgets/give_donor_wall.php:213
 #: widgets/give_donor_wall.php:226 widgets/give_donor_wall.php:239
 #: widgets/give_donor_wall.php:252 widgets/give_donor_wall.php:278
@@ -85,13 +85,15 @@ msgstr ""
 #: widgets/give_receipt.php:142 widgets/give_receipt.php:154
 #: widgets/give_receipt.php:166 widgets/give_receipt.php:178
 #: widgets/give_receipt.php:190 widgets/give_receipt.php:202
-#: widgets/give_totals.php:157
+#: widgets/give_subscriptions.php:104 widgets/give_subscriptions.php:116
+#: widgets/give_subscriptions.php:128 widgets/give_subscriptions.php:140
+#: widgets/give_subscriptions.php:152 widgets/give_totals.php:157
 msgid "Show"
 msgstr ""
 
-#: widgets/donation_history.php:97 widgets/donation_history.php:109
-#: widgets/donation_history.php:121 widgets/donation_history.php:133
-#: widgets/donation_history.php:145 widgets/donation_history.php:157
+#: widgets/donation_history.php:105 widgets/donation_history.php:117
+#: widgets/donation_history.php:129 widgets/donation_history.php:141
+#: widgets/donation_history.php:153 widgets/donation_history.php:165
 #: widgets/give_donor_wall.php:188 widgets/give_donor_wall.php:214
 #: widgets/give_donor_wall.php:227 widgets/give_donor_wall.php:240
 #: widgets/give_donor_wall.php:253 widgets/give_donor_wall.php:279
@@ -104,61 +106,67 @@ msgstr ""
 #: widgets/give_receipt.php:143 widgets/give_receipt.php:155
 #: widgets/give_receipt.php:167 widgets/give_receipt.php:179
 #: widgets/give_receipt.php:191 widgets/give_receipt.php:203
-#: widgets/give_totals.php:158
+#: widgets/give_subscriptions.php:105 widgets/give_subscriptions.php:117
+#: widgets/give_subscriptions.php:129 widgets/give_subscriptions.php:141
+#: widgets/give_subscriptions.php:153 widgets/give_totals.php:158
 msgid "Hide"
 msgstr ""
 
-#: widgets/donation_history.php:105 widgets/give_receipt.php:139
+#: widgets/donation_history.php:113 widgets/give_receipt.php:139
+#: widgets/give_receipt.php:321
 msgid "Date"
 msgstr ""
 
-#: widgets/donation_history.php:107
+#: widgets/donation_history.php:115
 msgid "Show or hide a column with the date of the donation."
 msgstr ""
 
-#: widgets/donation_history.php:117 widgets/give_receipt.php:127
+#: widgets/donation_history.php:125 widgets/give_receipt.php:127
+#: widgets/give_receipt.php:309
 msgid "Donor"
 msgstr ""
 
-#: widgets/donation_history.php:119
+#: widgets/donation_history.php:127
 msgid "Show or hide a column with the donors full name."
 msgstr ""
 
-#: widgets/donation_history.php:129
+#: widgets/donation_history.php:137
 msgid "Amount"
 msgstr ""
 
-#: widgets/donation_history.php:131
+#: widgets/donation_history.php:139
 msgid "Show or hide a column with the amount of the donation."
 msgstr ""
 
-#: widgets/donation_history.php:141 widgets/give_receipt.php:175
+#: widgets/donation_history.php:149 widgets/give_receipt.php:175
+#: widgets/give_subscriptions.php:101 widgets/give_subscriptions.php:230
 msgid "Status"
 msgstr ""
 
-#: widgets/donation_history.php:143
+#: widgets/donation_history.php:151
 msgid "Show or hide a column with the status of the payment."
 msgstr ""
 
-#: widgets/donation_history.php:153 widgets/give_receipt.php:151
+#: widgets/donation_history.php:161 widgets/give_receipt.php:151
+#: widgets/give_receipt.php:350
 msgid "Payment Method"
 msgstr ""
 
-#: widgets/donation_history.php:155
+#: widgets/donation_history.php:163
 msgid "Show or hide a column with the name of the payment method."
 msgstr ""
 
-#: widgets/donation_history.php:171
+#: widgets/donation_history.php:179
 msgid "GIVEWP DONATION HISTORY WIDGET"
 msgstr ""
 
-#: widgets/donation_history.php:172
+#: widgets/donation_history.php:180
 msgid ""
 "This is the GiveWP Donation History widget. Choose which columns you want to "
 "have appear for your donors history."
 msgstr ""
 
-#: widgets/donation_history.php:174
+#: widgets/donation_history.php:182
 msgid "Visit the GiveWP Docs for more info on the GiveWP Donation History."
 msgstr ""
 
@@ -709,7 +717,7 @@ msgstr ""
 msgid "Visit the GiveWP Docs for more info on the GiveWP Profile Editor."
 msgstr ""
 
-#: widgets/give_receipt.php:41
+#: widgets/give_receipt.php:41 widgets/give_receipt.php:300
 msgid "Donation Receipt"
 msgstr ""
 
@@ -738,7 +746,7 @@ msgid "Custom text to show if the donation was successful."
 msgstr ""
 
 #: widgets/give_receipt.php:107 widgets/give_receipt.php:108
-#: widgets/give_receipt.php:290
+#: widgets/give_receipt.php:292
 msgid "Thank you for your donation."
 msgstr ""
 
@@ -776,7 +784,7 @@ msgstr ""
 msgid "Show or hide a row with the status of the payment."
 msgstr ""
 
-#: widgets/give_receipt.php:187
+#: widgets/give_receipt.php:187 widgets/give_receipt.php:315
 msgid "Company Name"
 msgstr ""
 
@@ -819,8 +827,93 @@ msgstr ""
 msgid "Visit the GiveWP Docs for more info on the GiveWP Donation Receipt."
 msgstr ""
 
-#: widgets/give_receipt.php:284
+#: widgets/give_receipt.php:286
 msgid "You are missing the donation ID to view this donation receipt."
+msgstr ""
+
+#: widgets/give_receipt.php:310
+msgid "Test Donor"
+msgstr ""
+
+#: widgets/give_receipt.php:322
+msgid "April 18, 2020"
+msgstr ""
+
+#: widgets/give_receipt.php:327
+msgid "Total Donation"
+msgstr ""
+
+#: widgets/give_receipt.php:332
+msgid "Donation"
+msgstr ""
+
+#: widgets/give_receipt.php:333
+msgid "First Form"
+msgstr ""
+
+#: widgets/give_receipt.php:338
+msgid "Donation Status"
+msgstr ""
+
+#: widgets/give_receipt.php:339
+msgid "Complete"
+msgstr ""
+
+#: widgets/give_receipt.php:344
+msgid "Donation ID"
+msgstr ""
+
+#: widgets/give_receipt.php:351
+msgid "Test Donation"
+msgstr ""
+
+#: widgets/give_receipt.php:356
+msgid "Receipt"
+msgstr ""
+
+#: widgets/give_receipt.php:357
+msgid "Download Receipt"
+msgstr ""
+
+#: widgets/give_receipt.php:369
+msgid "Subscription Details"
+msgstr ""
+
+#: widgets/give_receipt.php:377
+msgid "Subscription:"
+msgstr ""
+
+#: widgets/give_receipt.php:379 widgets/give_subscriptions.php:252
+msgid "Monthly"
+msgstr ""
+
+#: widgets/give_receipt.php:383
+msgid "Status:"
+msgstr ""
+
+#: widgets/give_receipt.php:385 widgets/give_subscriptions.php:256
+msgid "Active"
+msgstr ""
+
+#: widgets/give_receipt.php:389
+msgid "Renewal Date:"
+msgstr ""
+
+#: widgets/give_receipt.php:390
+msgid "June 4, 2020"
+msgstr ""
+
+#: widgets/give_receipt.php:393
+msgid "Progress:"
+msgstr ""
+
+#: widgets/give_receipt.php:394 widgets/give_subscriptions.php:267
+#: widgets/give_subscriptions.php:277
+msgid "Ongoing"
+msgstr ""
+
+#: widgets/give_receipt.php:400
+msgid "Manage Subscriptions"
 msgstr ""
 
 #: widgets/give_register.php:41
@@ -860,6 +953,100 @@ msgstr ""
 
 #: widgets/give_register.php:118
 msgid "Visit the GiveWP Docs for more info on the GiveWP Register feature."
+msgstr ""
+
+#: widgets/give_subscriptions.php:46
+msgid "GiveWP Subscriptions"
+msgstr ""
+
+#: widgets/give_subscriptions.php:93
+msgid "GiveWP Subscriptions Widget"
+msgstr ""
+
+#: widgets/give_subscriptions.php:103
+msgid "Show or hide the subscription status column."
+msgstr ""
+
+#: widgets/give_subscriptions.php:113 widgets/give_subscriptions.php:233
+msgid "Renewal Date"
+msgstr ""
+
+#: widgets/give_subscriptions.php:115
+msgid "Show or hide a column with the subscription renewal date."
+msgstr ""
+
+#: widgets/give_subscriptions.php:125 widgets/give_subscriptions.php:236
+msgid "Progress"
+msgstr ""
+
+#: widgets/give_subscriptions.php:127
+msgid "Show or hide a column with progress of the subscription."
+msgstr ""
+
+#: widgets/give_subscriptions.php:137 widgets/give_subscriptions.php:239
+msgid "Start Date"
+msgstr ""
+
+#: widgets/give_subscriptions.php:139
+msgid "Show or hide a column with the subscription start date."
+msgstr ""
+
+#: widgets/give_subscriptions.php:149 widgets/give_subscriptions.php:242
+msgid "End Date"
+msgstr ""
+
+#: widgets/give_subscriptions.php:151
+msgid "Show or hide a column with the subscription end date."
+msgstr ""
+
+#: widgets/give_subscriptions.php:161
+msgid "Subscriptions per Page"
+msgstr ""
+
+#: widgets/give_subscriptions.php:163
+msgid "The number of subscriptions to show before pagination appears."
+msgstr ""
+
+#: widgets/give_subscriptions.php:178
+msgid "GIVEWP SUBSCRIPTION HISTORY WIDGET"
+msgstr ""
+
+#: widgets/give_subscriptions.php:179
+msgid ""
+"This is the GiveWP Subscriptions widget. Choose which columns you want to "
+"have appear for your donors subscription history."
+msgstr ""
+
+#: widgets/give_subscriptions.php:181
+msgid "Visit the GiveWP Docs for more info on the GiveWP Subscriptions table."
+msgstr ""
+
+#: widgets/give_subscriptions.php:228
+msgid "Subscription"
+msgstr ""
+
+#: widgets/give_subscriptions.php:244
+msgid "Actions"
+msgstr ""
+
+#: widgets/give_subscriptions.php:250
+msgid "Form with a Goal"
+msgstr ""
+
+#: widgets/give_subscriptions.php:262
+msgid "Auto renew on June 4, 2020"
+msgstr ""
+
+#: widgets/give_subscriptions.php:272
+msgid "May 4, 2020"
+msgstr ""
+
+#: widgets/give_subscriptions.php:281
+msgid "View Receipt"
+msgstr ""
+
+#: widgets/give_subscriptions.php:283
+msgid "Cancel"
 msgstr ""
 
 #: widgets/give_totals.php:41
@@ -948,10 +1135,13 @@ msgid "Visit the GiveWP Docs for more info on the GiveWP Totals."
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "https://givewp.com"
+msgid "https://givewp.com/givewp-elementor-widgets"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Add all GiveWP shortcode options as Elementor Widgets"
+msgid "All GiveWP shortcodes as Elementor Widgets"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://givewp.com"
 msgstr ""

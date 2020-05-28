@@ -38,7 +38,7 @@ No more fidgeting with shortcode args or comparing docs. Just use the Donation E
 Once the add-on is enabled, you'll have a new Widget section in your Elementor builder called "GiveWP Widgets". There's you'll find all 10 of the available widgets. Simply drop any of them onto your page and the options will be displayed for you to configure. 
 
 **ABOUT OUR FREE ADD-ONS**
-Add-ons like "GiveWP Donation Widgets for Elementor" are a way that we are giving back to the WordPress community. Check out our [announcement about this add-on](https://givewp.com/free-givewp-elementor-widgets/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) to learn more about all the great and free add-ons we're creating.
+Add-ons like "GiveWP Donation Widgets for Elementor" are a way that we are giving back to the WordPress community. Check out our [announcement about this add-on](https://givewp.com/new-free-add-on-givewp-donation-widgets-for-elementor/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) to learn more about all the great and free add-ons we're creating.
 
 **ABOUT GIVEWP**
 > [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.

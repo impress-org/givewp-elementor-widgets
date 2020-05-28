@@ -128,7 +128,8 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 				'description' => __( 'What is the form ID of the form you want to pull the donors from?', 'dw4elementor' ),
 				'condition' => [
 					'all_forms' => 'no'
-				]
+				],
+				'input_type' => 'number'
 			]
 		);
 
@@ -356,7 +357,7 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 
 		$settings = $this->get_settings_for_display();
 
-		$forms = ( 'yes' === $settings['all_forms'] ? '' : $settings['form_id'][0]);
+		$forms = ( 'yes' === $settings['all_forms'] ? '' : $settings['form_id']);
 		$paged = esc_html( $settings['donors_per_page'] );
 		$columns = esc_html( $settings['columns'] );
 		$anonymous = esc_html( $settings['anonymous'] );

@@ -4,7 +4,7 @@ Donate link: https://github.com/impress-org/givewp-elementor-widgets
 Tags: givewp, elementor, widgets, donations, fundraising,
 Requires at least: 5.0
 Tested up to: 5.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires Give: 2.5.0
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -96,6 +96,10 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 5. The GiveWP Totals Widget 
 
 == Changelog ==
+
+### 1.1.1 May 28, 2020 ### 
+
+* FIX: Ensure Donor Wall widget can show single form donors correctly ([issue](https://github.com/impress-org/givewp-elementor-widgets/issues/7)). 
 
 ### 1.1.0 May 4, 2020 ###
 **Enhancements**

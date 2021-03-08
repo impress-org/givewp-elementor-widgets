@@ -1,11 +1,10 @@
 <?php
-
 /**
  * Plugin Name: 	GiveWP Donation Widgets for Elementor
  * Plugin URI: 		https://givewp.com/givewp-elementor-widgets
  * Description: 	All GiveWP shortcodes as Elementor Widgets
  * Version: 		1.1.1
- * Author: 			GiveWP 
+ * Author: 			GiveWP
  * Author URI: 		https://givewp.com
  * License:      	GNU General Public License v2 or later
  * License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
@@ -84,7 +83,7 @@ final class GiveWP_DW_4_Elementor
 		register_activation_hook(GiveWP_DW_4_Elementor_FILE, array($this, 'install'));
 
 		add_action('give_init', array($this, 'init'), 10, 1);
-		
+
 		add_action( 'admin_enqueue_scripts', array($this, 'load_admin_styles') );
 
 	}
@@ -150,7 +149,7 @@ final class GiveWP_DW_4_Elementor
 		 *
 		 * @since  1.0.0
 		 */
-	
+
 		// Number of days you want the notice delayed by.
 		$delayindays = 15;
 

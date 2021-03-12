@@ -5,7 +5,7 @@
  * Plugin URI: 		https://givewp.com/givewp-elementor-widgets
  * Description: 	All GiveWP shortcodes as Elementor Widgets
  * Version: 		1.1.1
- * Author: 			GiveWP 
+ * Author: 			GiveWP
  * Author URI: 		https://givewp.com
  * License:      	GNU General Public License v2 or later
  * License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
@@ -84,7 +84,7 @@ final class GiveWP_DW_4_Elementor
 		register_activation_hook(GiveWP_DW_4_Elementor_FILE, array($this, 'install'));
 
 		add_action('give_init', array($this, 'init'), 10, 1);
-		
+
 		add_action( 'admin_enqueue_scripts', array($this, 'load_admin_styles') );
 
 	}
@@ -150,7 +150,7 @@ final class GiveWP_DW_4_Elementor
 		 *
 		 * @since  1.0.0
 		 */
-	
+
 		// Number of days you want the notice delayed by.
 		$delayindays = 15;
 
@@ -356,6 +356,11 @@ final class GiveWP_DW_4_Elementor
 		// Register Give Goal widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Form_Grid_Widget());
 
+		if ( $this->give_min_version( '2.9.0' ) ) {
+			// Register Give Multi Form Goal widget
+			\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Multi_Form_Goal_Widget());
+		}
+
 		if ( class_exists('Give_Recurring')) {
 			// Register Give Goal widget
 			\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Subscriptions_Widget());
@@ -380,6 +385,17 @@ final class GiveWP_DW_4_Elementor
 
 		// admin editor styles
 		wp_enqueue_style('dw4elementor-admin-styles', GiveWP_DW_4_Elementor_URL . '/assets/dw4elementor-admin.css', array('give-admin-styles'), mt_rand(9, 999));
+	}
+
+	/**
+	 * Check give min version
+	 *
+	 * @param string $version
+	 *
+	 * @return bool
+	 */
+	public function give_min_version( $version ) {
+		return defined( 'GIVE_VERSION' ) && version_compare( GIVE_VERSION, $version, '>=' );
 	}
 }
 

@@ -100,25 +100,30 @@ class DW4Elementor_GiveWP_Multi_Form_Goal_Widget extends \Elementor\Widget_Base 
 			]
 		);
 
-		$this->add_control(
-			'tags',
-			[
-				'label'       => esc_html__( 'Tags', 'dw4elementor' ),
-				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => esc_html__( 'If you have tags enabled in GiveWP, you can list the category IDs that you want displayed in this grid. A comma-separated list of form tag IDs will cause the grid to include only forms with those tags.', 'dw4elementor' ),
-				'default'     => '',
-			]
-		);
+		if (  give_get_option( 'tags' ) === 'enabled' ) {
+			$this->add_control(
+				'tags',
+				[
+					'label'       => esc_html__( 'Tags', 'dw4elementor' ),
+					'type'        => \Elementor\Controls_Manager::TEXT,
+					'description' => esc_html__( 'If you have tags enabled in GiveWP, you can list the category IDs that you want displayed in this grid. A comma-separated list of form tag IDs will cause the grid to include only forms with those tags.',
+						'dw4elementor' ),
+					'default'     => '',
+				]
+			);
+		}
 
-		$this->add_control(
-			'categories',
-			[
-				'label'       => esc_html__( 'Categories', 'dw4elementor' ),
-				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => esc_html__( 'If you have categories enabled in GiveWP, you can list the category IDs that you want displayed in this grid. A comma-separated list of form category IDs will cause the grid to include only forms from those categories', 'dw4elementor' ),
-				'default'     => '',
-			]
-		);
+		if (  give_get_option( 'categories' ) === 'enabled' ) {
+			$this->add_control(
+				'categories',
+				[
+					'label'       => esc_html__( 'Categories', 'dw4elementor' ),
+					'type'        => \Elementor\Controls_Manager::TEXT,
+					'description' => esc_html__( 'If you have categories enabled in GiveWP, you can list the category IDs that you want displayed in this grid. A comma-separated list of form category IDs will cause the grid to include only forms from those categories', 'dw4elementor' ),
+					'default'     => '',
+				]
+			);
+		}
 
 		$this->add_control(
 			'goal',

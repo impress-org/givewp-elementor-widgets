@@ -24,7 +24,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'GiveWP Form Grid';
+		return 'GiveWP_Form_Grid';
 	}
 
 	/**

@@ -28,7 +28,7 @@ class DW4Elementor_GiveWP_Profile_Editor_Widget extends \Elementor\Widget_Base
 	 */
 	public function get_name()
 	{
-		return 'Give Profile Editor';
+		return 'Give_Profile_Editor';
 	}
 
 	/**

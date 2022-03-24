@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Elementor Give Form Grid Widget.
  *
@@ -12,7 +12,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
-	
+
 	/**
 	 * Get widget name.
 	 *
@@ -77,7 +77,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'give_form_grid_settings',
@@ -358,7 +358,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		$show_excerpt = esc_html( $settings['show_excerpt'] );
 		$show_featured_image = esc_html( $settings['show_featured_image'] );
 		$display_style = esc_html( $settings['display_style'] );
-		
+
 
 		$html = do_shortcode('
 			[give_form_grid 
@@ -374,7 +374,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				show_excerpt="' . $show_excerpt . '" 
 				show_featured_image="' . $show_featured_image . '" 
 				display_style="' . $display_style . '" 
-				orderby="' . $orderby . 
+				orderby="' . $orderby .
 				'"]'
 		);
 

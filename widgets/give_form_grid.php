@@ -318,7 +318,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				'raw' => '
 					<div class="dw4e">
 						<p class="info-head">
-							' . __('GIVEWP DONOR WALL WIDGET', 'dw4elementor') . '</p>
+							' . __('GIVEWP FORM GRID WIDGET', 'dw4elementor') . '</p>
 						<p class="info-message">' . __('This is the GiveWP Form Grid widget. Choose the elements you want to see appear in the form grid.', 'dw4elementor') . '</p>
 						<p class="dw4e-docs-links">
 							<a href="https://givewp.com/documentation/core/shortcodes/give_form_grid/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Form Grid.', 'dw4elementor') . '</a>

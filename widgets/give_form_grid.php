@@ -303,7 +303,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				'description' => __( 'Choose the behavior when a form is clicked on within the grid.', 'dw4elementor' ),
 				'options' => [
 					'redirect' => __('Redirect to the single Form Page.', 'dw4elementor'),
-					'modal' => __('Open the form in a modal window.', 'dw4elementor'),
+					'modal_reveal' => __('Open the form in a modal window.', 'dw4elementor'),
 				],
 				'default' => 'redirect'
 			]

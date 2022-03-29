@@ -49,7 +49,7 @@ final class GiveWP_DW_4_Elementor
 	 *
 	 * @var string Minimum Elementor version required to run the plugin.
 	 */
-	const MINIMUM_ELEMENTOR_VERSION = '2.0.0';
+	const MINIMUM_ELEMENTOR_VERSION = '3.5.0';
 
 
 	/**

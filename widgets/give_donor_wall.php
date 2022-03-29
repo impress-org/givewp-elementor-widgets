@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Elementor Give Donor Wall Widget.
  *
@@ -12,7 +12,7 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
-	
+
 	/**
 	 * Get widget name.
 	 *
@@ -24,7 +24,7 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'Give Donor Wall';
+		return 'Give_Donor_Wall';
 	}
 
 	/**
@@ -77,7 +77,7 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'give_donor_wall_settings',
@@ -373,7 +373,7 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 		$avatar_size = esc_html( $settings['avatar_size'] );
 		$orderby = esc_html( $settings['orderby'] );
 		$order = esc_html( $settings['order'] );
-		
+
 
 		$html = do_shortcode('
 			[give_donor_wall 
@@ -392,7 +392,7 @@ class DW4Elementor_GiveWP_Donor_Wall_Widget extends \Elementor\Widget_Base {
 				loadmore_text="' . $loadmore_text . '" 
 				avatar_size="' . $avatar_size . '" 
 				order="' . $order . '" 
-				orderby="' . $orderby . 
+				orderby="' . $orderby .
 				'"]'
 		);
 

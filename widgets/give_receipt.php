@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Elementor Donation Receipt Widget.
  *
@@ -12,7 +12,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
-	
+
 	/**
 	 * Get widget name.
 	 *
@@ -77,7 +77,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'content_section',
@@ -255,17 +255,17 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 		// Adding PDF Receipt row, and Subscription table
 		$pdfreceipts = ( class_exists( 'Give_PDF_Receipts' ) ) ? "true" : "false";
 		$recurring = ( class_exists( 'Give_Recurring' ) ) ? "true" : "false";
-		
+
 		if ( ! \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 
 		$html = do_shortcode('
-			[give_receipt ' 
+			[give_receipt '
 				. $error . ' '
 				. $price . ' '
 				. $donor . ' '
 				. $date . ' '
 				. $method . ' '
-				. $id . ' ' 
+				. $id . ' '
 				. $status . ' '
 				. $company . ' '
 				. $notice .
@@ -278,19 +278,19 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 
 		echo '</div>';
 
-		} else { 
+		} else {
 			?>
 			<div id="give-receipt">
 				<div class="give_notices give_errors" id="give_error_fail">
 					<p class="give_notice give_error">
 						<?php echo (!empty($error) ? $error : __('You are missing the donation ID to view this donation receipt.', 'dw4elementor')); ?>
-					</p>		
+					</p>
 				</div>
 				<?php if ( 'yes' == $settings['status_notice'] ) : ?>
 				<div class="give_notices give_errors" id="give_error_success">
 					<p class="give_notice give_success">
 						<?php echo (!empty($success) ? $success : __('Thank you for your donation.', 'dw4elementor')); ?>
-					</p>		
+					</p>
 				</div>
 				<?php endif; ?>
 				<table id="give_donation_receipt" class="give-table">
@@ -303,25 +303,25 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 					</thead>
 
 					<tbody>
-						<?php 
+						<?php
 						if ( 'yes' == $settings['donor'] ) : ?>
 						<tr>
 							<td scope="row"><strong><?php _e('Donor', 'dw4elementor'); ?></strong></td>
 							<td><?php _e('Test Donor', 'dw4elementor'); ?></td>
 						</tr>
-						<?php endif; 
+						<?php endif;
 						if ( 'yes' == $settings['company'] ) : ?>
 						<tr>
 							<td scope="row"><strong><?php _e('Company Name', 'dw4elementor') ;?></strong></td>
 							<td>Impress.org</td>
 						</tr>
-						<?php endif; 
+						<?php endif;
 						if ( 'yes' == $settings['date'] ) : ?>
 						<tr>
 							<td scope="row"><strong><?php _e('Date', 'dw4elementor'); ?></strong></td>
 							<td><?php _e('April 18, 2020' , 'dw4elementor') ;?></td>
 						</tr>
-						<?php endif; 
+						<?php endif;
 						if ( 'yes' == $settings['price'] ) : ?>
 						<tr>
 							<td scope="row"><strong><?php _e('Total Donation' ,'dw4elementor'); ?></strong></td>
@@ -332,25 +332,25 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 							<td scope="row"><strong><?php _e('Donation' , 'dw4elementor'); ?></strong></td>
 							<td><?php _e('First Form', 'dw4elementor'); ?><span class="donation-level-text-wrap"></span></td>
 						</tr>
-						<?php 
+						<?php
 						if ( 'yes' == $settings['status'] ) : ?>
 						<tr>
 							<td scope="row"><strong><?php _e('Donation Status', 'dw4elementor'); ?></strong></td>
 							<td><?php _e('Complete', 'dw4elementor'); ?></td>
 						</tr>
-						<?php endif; 
+						<?php endif;
 						if ( 'yes' == $settings['payment_id'] ) : ?>
 						<tr>
 							<td scope="row"><strong><?php _e('Donation ID', 'dw4elementor');?></strong></td>
 							<td>3</td>
 						</tr>
-						<?php endif; 
+						<?php endif;
 						if ( 'yes' == $settings['method'] ) : ?>
 						<tr>
 							<td scope="row"><strong><?php _e('Payment Method' , 'dw4elementor'); ?></strong></td>
 							<td><?php _e('Test Donation', 'dw4elementor'); ?></td>
-						</tr>	
-						<?php endif; 
+						</tr>
+						<?php endif;
 						if ( 'true' == $pdfreceipts ) : ?>
 						<tr>
 							<td><strong><?php _e('Receipt', 'dw4elementor'); ?>:</strong></td>
@@ -372,7 +372,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 					</thead>
 
 					<tbody>
-					
+
 						<tr>
 							<td scope="row"><strong><?php _e('Subscription:', 'dw4elementor'); ?></strong></td>
 							<td>
@@ -399,7 +399,7 @@ class DW4Elementor_GiveWP_Receipt_Widget extends \Elementor\Widget_Base {
 				</table>
 				<a href="#" class="give-recurring-manage-subscriptions-receipt-link"><?php _e('Manage Subscriptions', 'dw4elementor'); ?> »</a>
 			</div>
-		<?php 
+		<?php
 		 endif; // End if Recurring Donations is active.
 		}
 	}

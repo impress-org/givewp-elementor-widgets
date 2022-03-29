@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Elementor Give Form Grid Widget.
  *
@@ -12,7 +12,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
-	
+
 	/**
 	 * Get widget name.
 	 *
@@ -24,7 +24,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'GiveWP Form Grid';
+		return 'GiveWP_Form_Grid';
 	}
 
 	/**
@@ -77,7 +77,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'give_form_grid_settings',
@@ -303,7 +303,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				'description' => __( 'Choose the behavior when a form is clicked on within the grid.', 'dw4elementor' ),
 				'options' => [
 					'redirect' => __('Redirect to the single Form Page.', 'dw4elementor'),
-					'modal' => __('Open the form in a modal window.', 'dw4elementor'),
+					'modal_reveal' => __('Open the form in a modal window.', 'dw4elementor'),
 				],
 				'default' => 'redirect'
 			]
@@ -318,7 +318,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				'raw' => '
 					<div class="dw4e">
 						<p class="info-head">
-							' . __('GIVEWP DONOR WALL WIDGET', 'dw4elementor') . '</p>
+							' . __('GIVEWP FORM GRID WIDGET', 'dw4elementor') . '</p>
 						<p class="info-message">' . __('This is the GiveWP Form Grid widget. Choose the elements you want to see appear in the form grid.', 'dw4elementor') . '</p>
 						<p class="dw4e-docs-links">
 							<a href="https://givewp.com/documentation/core/shortcodes/give_form_grid/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Form Grid.', 'dw4elementor') . '</a>
@@ -358,7 +358,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		$show_excerpt = esc_html( $settings['show_excerpt'] );
 		$show_featured_image = esc_html( $settings['show_featured_image'] );
 		$display_style = esc_html( $settings['display_style'] );
-		
+
 
 		$html = do_shortcode('
 			[give_form_grid 
@@ -374,7 +374,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				show_excerpt="' . $show_excerpt . '" 
 				show_featured_image="' . $show_featured_image . '" 
 				display_style="' . $display_style . '" 
-				orderby="' . $orderby . 
+				orderby="' . $orderby .
 				'"]'
 		);
 

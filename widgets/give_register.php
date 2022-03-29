@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Elementor Give Register Widget.
  *
@@ -12,7 +12,7 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
-	
+
 	/**
 	 * Get widget name.
 	 *
@@ -77,7 +77,7 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'give_register_settings',
@@ -146,11 +146,11 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 
 		ob_start(); ?>
 		<form id="give-register-form" class="give-form">
-	
+
 		<fieldset>
 			<legend>Register a New Account</legend>
 
-			
+
 			<div class="form-row form-row-first form-row-responsive">
 				<label for="give-user-login">Username</label>
 				<input id="give-user-login" class="required give-input" type="text" name="give_user_login" required="" aria-required="true">
@@ -171,7 +171,7 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 				<input id="give-user-pass2" class="password required give-input" type="password" name="give_user_pass2" required="" aria-required="true">
 			</div>
 
-			
+
 			<div class="give-hidden">
 				<input type="hidden" name="give_honeypot" value="">
 				<input type="hidden" name="give_action" value="user_register">
@@ -182,11 +182,11 @@ class DW4Elementor_GiveWP_Register_Widget extends \Elementor\Widget_Base {
 				<input class="button" name="give_register_submit" type="submit" value="Register">
 			</div>
 
-			
+
 		</fieldset>
 
 		</form>
-		<?php 
+		<?php
 
 		ob_get_contents();
 

@@ -3,9 +3,9 @@ Contributors: givewp, webdevmattcrom
 Donate link: https://github.com/impress-org/givewp-elementor-widgets
 Tags: givewp, elementor, widgets, donations, fundraising,
 Requires at least: 5.0
-Tested up to: 5.7
-Stable tag: 1.1.1
-Requires Give: 2.5.0
+Tested up to: 6.0
+Stable tag: 1.2.0
+Requires Give: 2.21.0
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -97,8 +97,12 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 == Changelog ==
 
-### 1.1.1 May 28, 2020 ###
+### 1.2.0 July 6, 2022 ###
+* New: Added the Multi-Form goal block
+* Enhancement: The Form Grid block has been updated with more controls
+* Fix: Resolved an issue with Elementor Pro which prevent GiveWP blocks from being edited
 
+### 1.1.1 May 28, 2020 ###
 * FIX: Ensure Donor Wall widget can show single form donors correctly ([issue](https://github.com/impress-org/givewp-elementor-widgets/issues/7)).
 
 ### 1.1.0 May 4, 2020 ###

@@ -3,9 +3,9 @@ Contributors: givewp, webdevmattcrom
 Donate link: https://github.com/impress-org/givewp-elementor-widgets
 Tags: givewp, elementor, widgets, donations, fundraising,
 Requires at least: 5.0
-Tested up to: 5.4
-Stable tag: 1.1.1
-Requires Give: 2.5.0
+Tested up to: 6.0
+Stable tag: 1.2.0
+Requires Give: 2.21.0
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -21,28 +21,28 @@ No more fidgeting with shortcode args or comparing docs. Just use the Donation E
 **WIDGETS INCLUDED**
 
 * GiveWP Form Widget
-* GiveWP Donor Wall Widget 
-* GiveWP Form Grid Widget 
-* GiveWP Totals Widget 
-* GiveWP Goals Widget 
-* GiveWP Donation Receipt Widget 
-* GiveWP Donation History Widget 
-* GiveWP Registration Widget 
-* GiveWP Login Widget 
+* GiveWP Donor Wall Widget
+* GiveWP Form Grid Widget
+* GiveWP Totals Widget
+* GiveWP Goals Widget
+* GiveWP Donation Receipt Widget
+* GiveWP Donation History Widget
+* GiveWP Registration Widget
+* GiveWP Login Widget
 * GiveWP Profile Editor Widget
 * GiveWP Subscriptions Table (for Recurring Donations add-on)
 
 
 **BASIC USAGE**
 
-Once the add-on is enabled, you'll have a new Widget section in your Elementor builder called "GiveWP Widgets". There's you'll find all 10 of the available widgets. Simply drop any of them onto your page and the options will be displayed for you to configure. 
+Once the add-on is enabled, you'll have a new Widget section in your Elementor builder called "GiveWP Widgets". There's you'll find all 10 of the available widgets. Simply drop any of them onto your page and the options will be displayed for you to configure.
 
 **ABOUT OUR FREE ADD-ONS**
 Add-ons like "GiveWP Donation Widgets for Elementor" are a way that we are giving back to the WordPress community. Check out our [announcement about this add-on](https://givewp.com/new-free-add-on-givewp-donation-widgets-for-elementor/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) to learn more about all the great and free add-ons we're creating.
 
 **ABOUT GIVEWP**
 > [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=Elementor_Widgets) is the most robust WordPress plugin available for accepting online donations. GiveWP provides you with powerful features helping you raise more funds for your cause from one, effective, platform.
-> 
+>
 > If you are enjoying Give Form Countdown please consider giving us your feedback and rating.
 
 == Frequently Asked Questions ==
@@ -89,17 +89,21 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 == Screenshots ==
 
-1. The GiveWP Widget Section in the Elementor Builder 
-2. The GiveWP Form Widget 
-3. The GiveWP Form Grid Widget 
-4. The GiveWP Donor Wall Widget 
-5. The GiveWP Totals Widget 
+1. The GiveWP Widget Section in the Elementor Builder
+2. The GiveWP Form Widget
+3. The GiveWP Form Grid Widget
+4. The GiveWP Donor Wall Widget
+5. The GiveWP Totals Widget
 
 == Changelog ==
 
-### 1.1.1 May 28, 2020 ### 
+### 1.2.0 July 6, 2022 ###
+* New: Added the Multi-Form goal block
+* Enhancement: The Form Grid block has been updated with more controls
+* Fix: Resolved an issue with Elementor Pro which prevent GiveWP blocks from being edited
 
-* FIX: Ensure Donor Wall widget can show single form donors correctly ([issue](https://github.com/impress-org/givewp-elementor-widgets/issues/7)). 
+### 1.1.1 May 28, 2020 ###
+* FIX: Ensure Donor Wall widget can show single form donors correctly ([issue](https://github.com/impress-org/givewp-elementor-widgets/issues/7)).
 
 ### 1.1.0 May 4, 2020 ###
 **Enhancements**
@@ -109,7 +113,7 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 **Bug Fixes**
 
-* [Removed PHP shorttag to prevent fatal error for some users](https://github.com/impress-org/givewp-elementor-widgets/issues/6). 
+* [Removed PHP shorttag to prevent fatal error for some users](https://github.com/impress-org/givewp-elementor-widgets/issues/6).
 
 ### 1.0.0 May 1, 2020 ###
 Initial Release!!

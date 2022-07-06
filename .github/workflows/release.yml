@@ -1,0 +1,19 @@
+name: Release to WordPress.org
+
+on:
+    release:
+        types: [ released ]
+
+jobs:
+    build:
+        uses: impress-org/givewp-github-actions/.github/workflows/wp-org-release.yml@master
+        with:
+            wp_org_slug: givewp-donation-widgets-for-elementor
+            zip_name: givewp-donation-widgets-for-elementor
+            text_domain: dw4elementor
+            install_composer_packages: false
+            install_npm_packages: false
+        secrets:
+            SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+            SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+            SLACK_ANNOUNCEMENT_WEBHOOK: ${{ secrets.SLACK_ANNOUNCEMENT_WEBHOOK }}

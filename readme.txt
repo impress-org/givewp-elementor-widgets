@@ -57,7 +57,7 @@ If you have purchased any of our Premium Add-ons, we can provide with your [Prio
 
 If you are a free GiveWP user and have a general question about GiveWP, submit a ticket here.
 
-Otherwise, if your question is specific to GiveWP Form Countdown we're happy to answer your questions [here](https://wordpress.org/support/plugin/givewp-donation-widgets-for-elementor).
+Otherwise, if your question is specific to "Donation Widgets for Elementor" we're happy to answer your questions [here](https://wordpress.org/support/plugin/givewp-donation-widgets-for-elementor).
 
 = I have a feature request, or would like to contribute to this plugin. Where can I do that? =
 

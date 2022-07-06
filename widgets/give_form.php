@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Elementor Give Form Widget.
  *
@@ -12,7 +12,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
-	
+
 	/**
 	 * Get widget name.
 	 *
@@ -77,7 +77,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'give_form_settings',

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Elementor Give Form Grid Widget.
  *
@@ -12,7 +12,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
-	
+
 	/**
 	 * Get widget name.
 	 *
@@ -24,7 +24,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'GiveWP Form Grid';
+		return 'GiveWP_Form_Grid';
 	}
 
 	/**
@@ -77,7 +77,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * @since 1.0.0
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'give_form_grid_settings',
@@ -196,6 +196,17 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+        $this->add_control(
+            'paged',
+            [
+                'label' => __( 'Show Pagination', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __( 'Show', 'dw4elementor' ),
+                'label_off' => __( 'Hide', 'dw4elementor' ),
+                'default' => 'yes',
+            ]
+        );
+
 		$this->add_control(
 			'orderby',
 			[
@@ -271,7 +282,19 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control(
+        $this->add_control(
+            'excerpt_length',
+            [
+                'label' => __( 'Excerpt Length', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'description' => __( 'Excerpt Length.', 'dw4elementor' ),
+                'condition' => [
+                    'show_excerpt' => 'yes'
+                ]
+            ]
+        );
+
+        $this->add_control(
 			'show_goal',
 			[
 				'label' => __( 'Show Form Goal', 'dw4elementor' ),
@@ -282,6 +305,21 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				'default' => 'yes',
 			]
 		);
+
+        $this->add_control(
+            'show_bar',
+            [
+                'label' => __( 'Show Progress Bar', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'description' => __( 'Show Progress Bar.', 'dw4elementor' ),
+                'label_on' => __( 'Show', 'dw4elementor' ),
+                'label_off' => __( 'Hide', 'dw4elementor' ),
+                'default' => 'yes',
+                'condition' => [
+                    'show_goal' => 'yes'
+                ]
+            ]
+        );
 
 		$this->add_control(
 			'show_featured_image',
@@ -295,6 +333,66 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+        $this->add_control(
+            'image_size',
+            [
+                'label' => __( 'Image Size', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'description' => __( 'Featured image size. Default "medium". Accepts WordPress image sizes.', 'dw4elementor' ),
+                'condition' => [
+                    'show_featured_image' => 'yes'
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'image_height',
+            [
+                'label' => __( 'Image Height', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'description' => __( 'Featured image height. Default "auto". Accepts valid CSS heights', 'dw4elementor' ),
+                'condition' => [
+                    'show_featured_image' => 'yes'
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'show_donate_button',
+            [
+                'label' => __( 'Show Donate Button', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __( 'Show', 'dw4elementor' ),
+                'label_off' => __( 'Hide', 'dw4elementor' ),
+                'default' => 'no',
+            ]
+        );
+
+        $this->add_control(
+            'donate_button_background_color',
+            [
+                'label' => __( 'Donate Button Background Color', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#66bb6a',
+                'condition' => [
+                    'show_donate_button' => 'yes'
+                ]
+            ]
+        );
+
+        $this->add_control(
+            'donate_button_text_color',
+            [
+                'label' => __( 'Donate Button Text Color', 'dw4elementor' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'condition' => [
+                    'show_donate_button' => 'yes'
+                ],
+
+            ]
+        );
+
 		$this->add_control(
 			'display_style',
 			[
@@ -303,7 +401,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				'description' => __( 'Choose the behavior when a form is clicked on within the grid.', 'dw4elementor' ),
 				'options' => [
 					'redirect' => __('Redirect to the single Form Page.', 'dw4elementor'),
-					'modal' => __('Open the form in a modal window.', 'dw4elementor'),
+					'modal_reveal' => __('Open the form in a modal window.', 'dw4elementor'),
 				],
 				'default' => 'redirect'
 			]
@@ -318,7 +416,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				'raw' => '
 					<div class="dw4e">
 						<p class="info-head">
-							' . __('GIVEWP DONOR WALL WIDGET', 'dw4elementor') . '</p>
+							' . __('GIVEWP FORM GRID WIDGET', 'dw4elementor') . '</p>
 						<p class="info-message">' . __('This is the GiveWP Form Grid widget. Choose the elements you want to see appear in the form grid.', 'dw4elementor') . '</p>
 						<p class="dw4e-docs-links">
 							<a href="https://givewp.com/documentation/core/shortcodes/give_form_grid/?utm_source=plugin_settings&utm_medium=referral&utm_campaign=Free_Addons&utm_content=dw4elementor" rel="noopener noreferrer" target="_blank"><i class="fa fa-book" aria-hidden="true"></i>' . __('Visit the GiveWP Docs for more info on the GiveWP Form Grid.', 'dw4elementor') . '</a>
@@ -346,7 +444,8 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$forms = ( 'yes' === $settings['all_forms'] ? '' : $settings['form_ids']);
-		$paged = esc_html( $settings['forms_per_page'] );
+		$forms_per_page = esc_html( $settings['forms_per_page'] );
+		$paged = esc_html( $settings['paged'] );
 		$columns = esc_html( $settings['columns'] );
 		$orderby = esc_html( $settings['orderby'] );
 		$order = esc_html( $settings['order'] );
@@ -355,14 +454,21 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		$tags = esc_html( $settings['tags'] );
 		$show_title = esc_html( $settings['show_title'] );
 		$show_goal = esc_html( $settings['show_goal'] );
+        $show_bar = esc_html( $settings['show_bar'] );
 		$show_excerpt = esc_html( $settings['show_excerpt'] );
+        $excerpt_length = esc_html( $settings['excerpt_length'] );
 		$show_featured_image = esc_html( $settings['show_featured_image'] );
 		$display_style = esc_html( $settings['display_style'] );
-		
+		$image_size = esc_html( $settings['image_size'] );
+		$image_height = esc_html( $settings['image_height'] );
+        $show_donate_button = esc_html($settings['show_donate_button']);
+		$button_bg_color = esc_html( $settings['donate_button_background_color'] );
+		$button_text_color = esc_html( $settings['donate_button_text_color'] );
 
 		$html = do_shortcode('
 			[give_form_grid 
-				forms_per_page="' . $paged . '" 
+				forms_per_page="' . $forms_per_page . '" 
+				paged="' . $paged . '" 
 				ids="' . $forms . '" 
 				columns="' . $columns . '" 
 				order="' . $order . '" 
@@ -371,10 +477,17 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				tags="' . $tags . '" 
 				show_title="' . $show_title . '" 
 				show_goal="' . $show_goal . '" 
+				show_bar="' . $show_bar . '" 
 				show_excerpt="' . $show_excerpt . '" 
+				excerpt_length="' . $excerpt_length . '" 
 				show_featured_image="' . $show_featured_image . '" 
+				image_size="' . $image_size . '" 
+				image_height="' . $image_height . '" 
+				show_donate_button="' . $show_donate_button . '" 
+				donate_button_background_color="' . $button_bg_color . '" 
+				donate_button_text_color="' . $button_text_color . '" 
 				display_style="' . $display_style . '" 
-				orderby="' . $orderby . 
+				orderby="' . $orderby .
 				'"]'
 		);
 

@@ -10,3 +10,5 @@ jobs:
         with:
             plugin_slug: givewp-donation-widgets-for-elementor
             zip_name: givewp-donation-widgets-for-elementor
+            install_composer_packages: false
+            install_npm_packages: false

@@ -88,6 +88,9 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
      */
     protected function register_controls()
     {
+        $forms       = $this->get_donation_forms_options();
+        $legacyForms = $this->get_legacy_forms($forms);
+
         $this->start_controls_section(
             'give_form_settings',
             [
@@ -103,7 +106,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
                 'type'        => \Elementor\Controls_Manager::SELECT,
                 'description' => __('Choose the GiveWP Form you want to embed.', 'dw4elementor'),
                 'default'     => '',
-                'options'     => $this->get_donation_forms_options(),
+                'options'     => $forms,
             ]
         );
 
@@ -143,6 +146,15 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
                 'label_off'    => __('Hide', 'dw4elementor'),
                 'return_value' => 'yes',
                 'default'      => 'no',
+                'conditions'   => [
+                    'terms' => [
+                        [
+                            'name'     => 'form_id',
+                            'operator' => 'in',
+                            'value'    => $legacyForms,
+                        ],
+                    ],
+                ],
             ]
         );
 
@@ -267,5 +279,23 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
         }
 
         return $options;
+    }
+
+    /**
+     * @param array $forms
+     *
+     * @return array
+     */
+    private function get_legacy_forms($forms)
+    {
+        $data = [];
+
+        foreach ($forms as $formId => $title) {
+            if ('legacy' === Give()->form_meta->get_meta($formId, '_give_form_template', true)) {
+                $data[] = (string)$formId;
+            }
+        }
+
+        return $data;
     }
 }

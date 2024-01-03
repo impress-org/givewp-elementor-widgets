@@ -90,6 +90,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     {
         $forms       = $this->get_donation_forms_options();
         $legacyForms = $this->get_legacy_forms($forms);
+        $v3Forms     = $this->get_v3_forms($forms);
 
         $this->start_controls_section(
             'give_form_settings',
@@ -183,6 +184,28 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
                 'default'     => __('Continue to Donate', 'dw4elementor'),
                 'condition'   => [
                     'display_style!' => 'onpage',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'v3_notice',
+            [
+                'label'           => __('Important Note', 'dw4elementor'),
+                'type'            => \Elementor\Controls_Manager::RAW_HTML,
+                'raw'             => esc_html__(
+                    'Form Display Style changes will not be visible for Donation forms created using the Visual Form Builder. Save the page and view it on the front end.',
+                    'dw4elementor'
+                ),
+                'content_classes' => 'give-elementor-notice',
+                'conditions'      => [
+                    'terms' => [
+                        [
+                            'name'     => 'form_id',
+                            'operator' => 'in',
+                            'value'    => $v3Forms,
+                        ],
+                    ],
                 ],
             ]
         );
@@ -292,6 +315,24 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
 
         foreach ($forms as $formId => $title) {
             if ('legacy' === Give()->form_meta->get_meta($formId, '_give_form_template', true)) {
+                $data[] = (string)$formId;
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * @param array $forms
+     *
+     * @return array
+     */
+    private function get_v3_forms($forms)
+    {
+        $data = [];
+
+        foreach ($forms as $formId => $title) {
+            if (Give()->form_meta->get_meta($formId, 'formBuilderSettings', true)) {
                 $data[] = (string)$formId;
             }
         }

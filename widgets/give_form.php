@@ -313,7 +313,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     {
         $data = [];
 
-        foreach ($forms as $formId => $title) {
+        foreach (array_keys($forms) as $formId) {
             if ('legacy' === Give()->form_meta->get_meta($formId, '_give_form_template', true)) {
                 $data[] = (string)$formId;
             }
@@ -331,7 +331,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     {
         $data = [];
 
-        foreach ($forms as $formId => $title) {
+        foreach (array_keys($forms) as $formId) {
             if (Give()->form_meta->get_meta($formId, 'formBuilderSettings', true)) {
                 $data[] = (string)$formId;
             }

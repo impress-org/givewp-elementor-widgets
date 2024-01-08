@@ -88,9 +88,10 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
      */
     protected function register_controls()
     {
-        $forms       = $this->get_donation_forms_options();
-        $legacyForms = $this->get_legacy_forms($forms);
-        $v3Forms     = $this->get_v3_forms($forms);
+        $forms        = $this->get_donation_forms_options();
+        $legacyForms  = $this->get_legacy_forms($forms);
+        $classicForms = $this->get_classic_forms($forms);
+        $v3Forms      = $this->get_v3_forms($forms);
 
         $this->start_controls_section(
             'give_form_settings',
@@ -120,6 +121,15 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
                 'label_on'    => __('Show', 'dw4elementor'),
                 'label_off'   => __('Hide', 'dw4elementor'),
                 'default'     => 'yes',
+                'conditions'  => [
+                    'terms' => [
+                        [
+                            'name'     => 'form_id',
+                            'operator' => '!in',
+                            'value'    => $classicForms,
+                        ],
+                    ],
+                ],
             ]
         );
 
@@ -305,7 +315,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     }
 
     /**
-     * Get legacy forms from list of forms returned by DW4Elementor_GiveWP_Form_Widget::get_donation_forms_options
+     * Get forms using legacy template from list of forms returned by DW4Elementor_GiveWP_Form_Widget::get_donation_forms_options
      *
      * @unlreased
      *
@@ -318,7 +328,29 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
         $data = [];
 
         foreach (array_keys($forms) as $formId) {
-            if ('legacy' === Give()->form_meta->get_meta($formId, '_give_form_template', true)) {
+            if ('legacy' === $this->get_form_template($formId)) {
+                $data[] = (string)$formId;
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * Get forms using classic template from list of forms returned by DW4Elementor_GiveWP_Form_Widget::get_donation_forms_options
+     *
+     * @unlreased
+     *
+     * @param array $forms
+     *
+     * @return array
+     */
+    private function get_classic_forms($forms)
+    {
+        $data = [];
+
+        foreach (array_keys($forms) as $formId) {
+            if ('classic' === $this->get_form_template($formId)) {
                 $data[] = (string)$formId;
             }
         }
@@ -340,11 +372,25 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
         $data = [];
 
         foreach (array_keys($forms) as $formId) {
-            if (Give()->form_meta->get_meta($formId, 'formBuilderSettings', true)) {
+            if (get_post_meta($formId, 'formBuilderSettings', true)) {
                 $data[] = (string)$formId;
             }
         }
 
         return $data;
+    }
+
+    /**
+     * Get form template
+     *
+     * @unreleased
+     *
+     * @param $formId
+     *
+     * @return string
+     */
+    private function get_form_template($formId)
+    {
+        return Give()->form_meta->get_meta($formId, '_give_form_template', true);
     }
 }

@@ -305,6 +305,10 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     }
 
     /**
+     * Get legacy forms from list of forms returned by DW4Elementor_GiveWP_Form_Widget::get_donation_forms_options
+     *
+     * @unlreased
+     *
      * @param array $forms
      *
      * @return array
@@ -323,6 +327,10 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     }
 
     /**
+     * Get v3 forms from list of forms returned by DW4Elementor_GiveWP_Form_Widget::get_donation_forms_options
+     *
+     * @unlreased
+     *
      * @param array $forms
      *
      * @return array

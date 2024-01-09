@@ -1,4 +1,7 @@
 <?php
+
+use Give\Framework\Database\DB;
+
 /**
  * Elementor Give Totals Widget.
  *
@@ -94,11 +97,9 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'description' => __( 'Choose the forms you want to combine in this total.', 'dw4elementor' ),
 				'separator' => 'after',
-				'options' => [
-					'10' => "First Form"
-				],
+				'options' => $this->get_donation_forms(),
 				'multiple' => true,
-				'default' => array('10'),
+				'default' => '',
 			]
 		);
 
@@ -212,6 +213,10 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 
 		global $give_receipt_args, $donation;
 
+        if ( empty($settings['forms']) ) {
+            return;
+        }
+
 		$settings = $this->get_settings_for_display();
 
 		$forms = $settings['forms'][0];
@@ -240,4 +245,28 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 
 		echo '</div>';
 	}
+
+    /**
+     * Get donation forms
+     *
+     * @unreleased
+     *
+     * @return array
+     */
+    private function get_donation_forms()
+    {
+        $options = [];
+
+        $forms = DB::table('posts')
+                   ->select('ID', 'post_title')
+                   ->where('post_type', 'give_forms')
+                   ->where('post_status', 'publish')
+                   ->getAll();
+
+        foreach ($forms as $form) {
+            $options[$form->ID] = $form->post_title;
+        }
+
+        return $options;
+    }
 }

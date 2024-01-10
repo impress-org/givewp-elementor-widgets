@@ -211,15 +211,8 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-		global $give_receipt_args, $donation;
+        $settings = $this->get_settings_for_display();
 
-        if ( empty($settings['forms']) ) {
-            return;
-        }
-
-		$settings = $this->get_settings_for_display();
-
-		$forms = $settings['forms'][0];
 		$goal = esc_html( $settings['total_goal'] );
 		$message = esc_html( $settings['message'] );
 		$link = esc_url( $settings['link']['url'] );
@@ -229,7 +222,7 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 
 		$html = do_shortcode('
 			[give_totals 
-				ids="' . $forms . '" 
+				ids="' . implode(',', $settings['forms']) . '" 
 				total_goal="' . $goal . '" 
 				message="' . $message . '"
 				link_text="' . $link_text . '"

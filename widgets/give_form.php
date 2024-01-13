@@ -2,6 +2,7 @@
 
 use Give\DonationForms\Models\DonationForm;
 use Give\Framework\Database\DB;
+use Give\Helpers\Form\Utils;
 
 /**
  * Elementor Give Form Widget.
@@ -268,7 +269,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
 
         if (isset($_POST['action']) && $_POST['action'] === 'elementor_ajax') {
             // is this v3 form?
-            if (get_post_meta($form_id, 'formBuilderSettings', true)) {
+            if (Utils::isV3Form($form_id)) {
                 if ($donationForm = DonationForm::find($form_id)) {
                     $donationForm->settings->showHeading        = boolval($show_title);
                     $donationForm->settings->enableDonationGoal = boolval($show_goal);
@@ -372,7 +373,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
         $data = [];
 
         foreach (array_keys($forms) as $formId) {
-            if (get_post_meta($formId, 'formBuilderSettings', true)) {
+            if (Utils::isV3Form($formId)) {
                 $data[] = (string)$formId;
             }
         }

@@ -108,7 +108,7 @@ final class GiveWP_DW_4_Elementor
 
 		// Set it to latest.
 		if (!defined('GiveWP_DW_4_Elementor_MIN_GIVE_VERSION')) {
-			define('GiveWP_DW_4_Elementor_MIN_GIVE_VERSION', '2.5');
+			define('GiveWP_DW_4_Elementor_MIN_GIVE_VERSION', '3.0.0');
 		}
 
 		if (!defined('GiveWP_DW_4_Elementor_FILE')) {

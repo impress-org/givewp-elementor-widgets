@@ -1,7 +1,4 @@
 <?php
-
-use Give\Framework\Database\DB;
-
 /**
  * Elementor Give Totals Widget.
  *
@@ -97,9 +94,11 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'description' => __( 'Choose the forms you want to combine in this total.', 'dw4elementor' ),
 				'separator' => 'after',
-				'options' => $this->get_donation_forms(),
+				'options' => [
+					'10' => "First Form"
+				],
 				'multiple' => true,
-				'default' => '',
+				'default' => array('10'),
 			]
 		);
 
@@ -211,8 +210,11 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 
-        $settings = $this->get_settings_for_display();
+		global $give_receipt_args, $donation;
 
+		$settings = $this->get_settings_for_display();
+
+		$forms = $settings['forms'][0];
 		$goal = esc_html( $settings['total_goal'] );
 		$message = esc_html( $settings['message'] );
 		$link = esc_url( $settings['link']['url'] );
@@ -222,7 +224,7 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 
 		$html = do_shortcode('
 			[give_totals 
-				ids="' . implode(',', $settings['forms']) . '" 
+				ids="' . $forms . '" 
 				total_goal="' . $goal . '" 
 				message="' . $message . '"
 				link_text="' . $link_text . '"
@@ -238,28 +240,4 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
 
 		echo '</div>';
 	}
-
-    /**
-     * Get donation forms
-     *
-     * @unreleased
-     *
-     * @return array
-     */
-    private function get_donation_forms()
-    {
-        $options = [];
-
-        $forms = DB::table('posts')
-                   ->select('ID', 'post_title')
-                   ->where('post_type', 'give_forms')
-                   ->where('post_status', 'publish')
-                   ->getAll();
-
-        foreach ($forms as $form) {
-            $options[$form->ID] = $form->post_title;
-        }
-
-        return $options;
-    }
 }

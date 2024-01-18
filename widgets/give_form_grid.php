@@ -217,6 +217,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 					'date' => __('Date Created', 'dw4elementor'),
 					'title' => __('Form Name', 'dw4elementor'),
 					'amount_donated' => __('Amount Donated', 'dw4elementor'),
+					'name' => __('Form Name', 'dw4elementor'),
 					'number_donations' => __('Number of Donations', 'dw4elementor'),
 					'menu_order' => __('Menu Order', 'dw4elementor'),
 					'post__in' => __('Form ID', 'dw4elementor'),

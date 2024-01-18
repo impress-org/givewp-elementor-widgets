@@ -276,6 +276,14 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
                     $donationForm->save();
                 }
             }
+
+            // show hide goal for legacy template
+            if ($show_goal && Utils::isLegacyForm($form_id)) {
+                // Enable goal if it's disabled
+                if ('disabled' === give_get_meta($form_id, '_give_goal_option', true)) {
+                    give_update_meta($form_id, '_give_goal_option', 'enabled');
+                }
+            }
         }
 
         $shortcode = sprintf(

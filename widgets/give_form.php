@@ -260,7 +260,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     {
         $settings = $this->get_data('settings');
 
-        $form_id               = $this->get_settings('form_id');
+        $form_id               = (int)$this->get_settings('form_id');
         $show_title            = isset($settings['show_title']) ? $settings['show_title'] : 'true';
         $show_goal             = isset($settings['show_goal']) ? $settings['show_goal'] : 'true';
         $show_content          = isset($settings['show_content']) ? $settings['show_content'] : 'true';
@@ -275,14 +275,9 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
                     $donationForm->settings->enableDonationGoal = boolval($show_goal);
                     $donationForm->save();
                 }
-            }
-
-            // show hide goal for legacy template
-            if ($show_goal && Utils::isLegacyForm($form_id)) {
-                // Enable goal if it's disabled
-                if ('disabled' === give_get_meta($form_id, '_give_goal_option', true)) {
-                    give_update_meta($form_id, '_give_goal_option', 'enabled');
-                }
+            } else {
+                // For some strange reason, passing show_goal attr to give_form shortcode doesn't work, so in order for this to work we have to enable/disable goal by updating meta
+                give_update_meta($form_id, '_give_goal_option', $show_goal ? 'enabled' : 'disabled');
             }
         }
 

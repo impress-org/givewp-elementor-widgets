@@ -381,7 +381,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
         $data = [];
 
         foreach (array_keys($forms) as $formId) {
-            if (Utils::isV3Form($formId)) {
+            if (Utils::isV3Form((int)$formId)) {
                 $data[] = (string)$formId;
             }
         }

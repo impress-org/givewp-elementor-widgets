@@ -3,9 +3,9 @@
  * Plugin Name: 	GiveWP Donation Widgets for Elementor
  * Plugin URI: 		https://givewp.com/givewp-elementor-widgets
  * Description: 	All GiveWP shortcodes as Elementor Widgets
- * Version: 		1.2.0
- * Requires at least: 5.0
- * Requires PHP:    7.0
+ * Version: 		2.0.0
+ * Requires at least: 6.0
+ * Requires PHP:    7.2
  * Author: 			GiveWP
  * Author URI: 		https://givewp.com
  * License:      	GNU General Public License v2 or later
@@ -103,7 +103,7 @@ final class GiveWP_DW_4_Elementor
 
 		// Defines addon version number for easy reference.
 		if (!defined('GiveWP_DW_4_Elementor_VERSION')) {
-			define('GiveWP_DW_4_Elementor_VERSION', '1.1.1');
+			define('GiveWP_DW_4_Elementor_VERSION', '2.0.0');
 		}
 
 		// Set it to latest.

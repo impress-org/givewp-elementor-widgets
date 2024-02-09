@@ -387,7 +387,7 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
     /**
      * Get form template
      *
-     * @unreleased
+     * @since 2.0.0
      *
      * @param $formId
      *

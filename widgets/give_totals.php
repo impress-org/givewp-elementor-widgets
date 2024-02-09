@@ -242,7 +242,7 @@ class DW4Elementor_GiveWP_Totals_Widget extends \Elementor\Widget_Base {
     /**
      * Get donation forms
      *
-     * @unreleased
+     * @since 2.0.0
      *
      * @return array
      */

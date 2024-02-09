@@ -55,11 +55,16 @@
     background: #c13f16;
 }
 
+.give-elementor-notice {
+    padding: 10px 0;
+    color: #c13f16;
+}
+
 /*
- * Hide Link Options 
+ * Hide Link Options
  * Until this issue is resolved:
  * https://github.com/elementor/elementor/issues/11214
- * 
+ *
  */
 
 .elementor-control-give_register_settings + .elementor-control-link .elementor-control-url-more,

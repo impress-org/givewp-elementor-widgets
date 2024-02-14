@@ -3,7 +3,7 @@ Contributors: givewp, webdevmattcrom
 Donate link: https://github.com/impress-org/givewp-elementor-widgets
 Tags: givewp, elementor, widgets, donations, fundraising,
 Requires at least: 5.0
-Tested up to: 6.0
+Tested up to: 6.4
 Stable tag: 2.0.0
 Requires Give: 3.0.0
 Requires PHP: 7.2
@@ -97,7 +97,7 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 == Changelog ==
 
-### 2.0.0 February 12th, 2024 ###
+### 2.0.0 February 14th, 2024 ###
 * New: Added compatibility with the GiveWP visual form builder
 * Fix: Resolved an issue with the show goal setting not working properly
 

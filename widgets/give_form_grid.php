@@ -363,11 +363,11 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
                 'type' => \Elementor\Controls_Manager::SWITCHER,
                 'label_on' => __( 'Show', 'dw4elementor' ),
                 'label_off' => __( 'Hide', 'dw4elementor' ),
-                'default' => 'no',
+                'default' => 'yes',
             ]
         );
 
-        $this->add_control(
+        /*$this->add_control(
             'donate_button_background_color',
             [
                 'label' => __( 'Donate Button Background Color', 'dw4elementor' ),
@@ -377,18 +377,17 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
                     'show_donate_button' => 'yes'
                 ]
             ]
-        );
+        );*/
 
         $this->add_control(
             'donate_button_text_color',
             [
                 'label' => __( 'Donate Button Text Color', 'dw4elementor' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#fff',
+                'default' => '#69B86B',
                 'condition' => [
                     'show_donate_button' => 'yes'
                 ],
-
             ]
         );
 
@@ -482,8 +481,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				show_featured_image="' . $show_featured_image . '" 
 				image_size="' . $image_size . '" 
 				image_height="' . $image_height . '" 
-				show_donate_button="' . $show_donate_button . '" 
-				donate_button_background_color="' . $button_bg_color . '" 
+				show_donate_button="' . $show_donate_button . '" 				 
 				donate_button_text_color="' . $button_text_color . '" 
 				display_style="' . $display_style . '" 
 				orderby="' . $orderby .

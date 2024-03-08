@@ -73,7 +73,8 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * Register Give Form Grid widget controls.
 	 *
 	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
+     *
+     * @unreleased Changes 'donate_button_text_color' default value and removes 'show_bar' and 'donate_button_background_color' options as those don't exist in the form grid shortcode.
 	 * @since 1.0.0
 	 * @access protected
 	 */
@@ -305,21 +306,6 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-        $this->add_control(
-            'show_bar',
-            [
-                'label' => __( 'Show Progress Bar', 'dw4elementor' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'description' => __( 'Show Progress Bar.', 'dw4elementor' ),
-                'label_on' => __( 'Show', 'dw4elementor' ),
-                'label_off' => __( 'Hide', 'dw4elementor' ),
-                'default' => 'yes',
-                'condition' => [
-                    'show_goal' => 'yes'
-                ]
-            ]
-        );
-
 		$this->add_control(
 			'show_featured_image',
 			[
@@ -366,18 +352,6 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
                 'default' => 'yes',
             ]
         );
-
-        /*$this->add_control(
-            'donate_button_background_color',
-            [
-                'label' => __( 'Donate Button Background Color', 'dw4elementor' ),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#66bb6a',
-                'condition' => [
-                    'show_donate_button' => 'yes'
-                ]
-            ]
-        );*/
 
         $this->add_control(
             'donate_button_text_color',
@@ -431,7 +405,8 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 * Render the [give_form_grid] output on the frontend.
 	 *
 	 * Written in PHP and used to generate the final HTML.
-	 *
+     *
+     * @unreleased Changes 'donate_button_text_color' default value and removes 'show_bar' and 'donate_button_background_color' options as those don't exist in the form grid shortcode.
 	 * @since 1.0.0
 	 * @access protected
 	 */
@@ -452,7 +427,6 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		$tags = esc_html( $settings['tags'] );
 		$show_title = esc_html( $settings['show_title'] );
 		$show_goal = esc_html( $settings['show_goal'] );
-        $show_bar = esc_html( $settings['show_bar'] );
 		$show_excerpt = esc_html( $settings['show_excerpt'] );
         $excerpt_length = esc_html( $settings['excerpt_length'] );
 		$show_featured_image = esc_html( $settings['show_featured_image'] );
@@ -460,7 +434,6 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		$image_size = esc_html( $settings['image_size'] );
 		$image_height = esc_html( $settings['image_height'] );
         $show_donate_button = esc_html($settings['show_donate_button']);
-		$button_bg_color = esc_html( $settings['donate_button_background_color'] );
 		$button_text_color = esc_html( $settings['donate_button_text_color'] );
 
 		$html = do_shortcode('
@@ -474,8 +447,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				cats="' . $cats . '" 
 				tags="' . $tags . '" 
 				show_title="' . $show_title . '" 
-				show_goal="' . $show_goal . '" 
-				show_bar="' . $show_bar . '" 
+				show_goal="' . $show_goal . '" 				 
 				show_excerpt="' . $show_excerpt . '" 
 				excerpt_length="' . $excerpt_length . '" 
 				show_featured_image="' . $show_featured_image . '" 

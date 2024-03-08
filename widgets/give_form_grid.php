@@ -74,6 +74,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 *
 	 * Adds different input fields to allow the user to change and customize the widget settings.
 	 *
+     * @unreleased Remove "show progress bar" option
 	 * @since 1.0.0
 	 * @access protected
 	 */
@@ -305,21 +306,6 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
-        $this->add_control(
-            'show_bar',
-            [
-                'label' => __( 'Show Progress Bar', 'dw4elementor' ),
-                'type' => \Elementor\Controls_Manager::SWITCHER,
-                'description' => __( 'Show Progress Bar.', 'dw4elementor' ),
-                'label_on' => __( 'Show', 'dw4elementor' ),
-                'label_off' => __( 'Hide', 'dw4elementor' ),
-                'default' => 'yes',
-                'condition' => [
-                    'show_goal' => 'yes'
-                ]
-            ]
-        );
-
 		$this->add_control(
 			'show_featured_image',
 			[
@@ -433,6 +419,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 *
 	 * Written in PHP and used to generate the final HTML.
 	 *
+     * @unreleased Remove "show progress bar" option
 	 * @since 1.0.0
 	 * @access protected
 	 */
@@ -453,7 +440,6 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 		$tags = esc_html( $settings['tags'] );
 		$show_title = esc_html( $settings['show_title'] );
 		$show_goal = esc_html( $settings['show_goal'] );
-        $show_bar = esc_html( $settings['show_bar'] );
 		$show_excerpt = esc_html( $settings['show_excerpt'] );
         $excerpt_length = esc_html( $settings['excerpt_length'] );
 		$show_featured_image = esc_html( $settings['show_featured_image'] );
@@ -475,8 +461,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 				cats="' . $cats . '" 
 				tags="' . $tags . '" 
 				show_title="' . $show_title . '" 
-				show_goal="' . $show_goal . '" 
-				show_bar="' . $show_bar . '" 
+				show_goal="' . $show_goal . '" 				
 				show_excerpt="' . $show_excerpt . '" 
 				excerpt_length="' . $excerpt_length . '" 
 				show_featured_image="' . $show_featured_image . '" 

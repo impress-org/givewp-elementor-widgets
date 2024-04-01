@@ -74,7 +74,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 *
 	 * Adds different input fields to allow the user to change and customize the widget settings.
      *
-     * @unreleased Changes 'donate_button_text_color' default value and removes 'show_bar' and 'donate_button_background_color' options as those don't exist in the form grid shortcode.
+     * @since 2.0.1 Changes 'donate_button_text_color' default value and removes 'show_bar' and 'donate_button_background_color' options as those don't exist in the form grid shortcode.
 	 * @since 1.0.0
 	 * @access protected
 	 */
@@ -406,7 +406,7 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	 *
 	 * Written in PHP and used to generate the final HTML.
      *
-     * @unreleased Changes 'donate_button_text_color' default value and removes 'show_bar' and 'donate_button_background_color' options as those don't exist in the form grid shortcode.
+     * @since 2.0.1 Changes 'donate_button_text_color' default value and removes 'show_bar' and 'donate_button_background_color' options as those don't exist in the form grid shortcode.
 	 * @since 1.0.0
 	 * @access protected
 	 */

@@ -2,9 +2,9 @@
 Contributors: givewp, webdevmattcrom
 Donate link: https://github.com/impress-org/givewp-elementor-widgets
 Tags: givewp, elementor, widgets, donations, fundraising,
-Requires at least: 5.0
-Tested up to: 6.4
-Stable tag: 2.0.1
+Requires at least: 6.6
+Tested up to: 6.8
+Stable tag: 2.0.2
 Requires Give: 3.0.0
 Requires PHP: 7.2
 License: GPLv3 or later
@@ -67,7 +67,6 @@ Otherwise, if your question is specific to "Donation Widgets for Elementor" we'r
 
 **Minimum Requirements**
 
-* WordPress 6.0 or greater
 * PHP version 7.2 or greater
 * MySQL version 5.7 or greater
 
@@ -96,6 +95,9 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 5. The GiveWP Totals Widget
 
 == Changelog ==
+
+### 2.0.2 July 16th, 2025 ###
+* Chore: Updated compatbility with WordPress 6.8
 
 ### 2.0.1 April 3rd, 2024 ###
 * Fix: Resolved several issues with the GiveWP form grid widget options not working as expected

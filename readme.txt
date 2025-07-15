@@ -97,7 +97,7 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 == Changelog ==
 
 ### 2.0.2 July 16th, 2025 ###
-* Chore: Updated compatbility with WordPress 6.8
+* Fix: Resolved an issue with Give icons now showing on widgets
 
 ### 2.0.1 April 3rd, 2024 ###
 * Fix: Resolved several issues with the GiveWP form grid widget options not working as expected

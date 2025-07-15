@@ -381,7 +381,11 @@ final class GiveWP_DW_4_Elementor
 	// editor styles
 	public function editor_enqueue_scripts() {
 
-		wp_enqueue_style('give-admin-styles', GIVE_PLUGIN_URL . '/assets/dist/css/admin.rtl.css', array(), GIVE_VERSION);
+		if (GIVE_VERSION >= '4.0.0') {
+			wp_enqueue_style('give-admin-styles', GIVE_PLUGIN_URL . 'build/assets/dist/css/admin.css', array(), GIVE_VERSION);
+		} else {
+			wp_enqueue_style('give-admin-styles', GIVE_PLUGIN_URL . '/assets/dist/css/admin.rtl.css', array(), GIVE_VERSION);
+		}
 
 		// admin editor styles
 		wp_enqueue_style('dw4elementor-admin-styles', GiveWP_DW_4_Elementor_URL . '/assets/dw4elementor-admin.css', array('give-admin-styles'), mt_rand(9, 999));

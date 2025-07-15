@@ -1,3 +1,13 @@
+/* @font-face {
+  font-family: 'give-icomoon';
+  src: url('./fonts/icomoon.eot');
+  src: url('./fonts/icomoon.eot') format('embedded-opentype'),
+  url('./fonts/icomoon.woff') format('woff'),
+  url('./fonts/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+} */
+
 .elementor-panel .elementor-element .icon i.dw4elementor-icon:before {
     font-family: 'give-icomoon';
     font-size: 2rem;

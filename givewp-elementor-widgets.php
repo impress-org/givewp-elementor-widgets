@@ -312,10 +312,12 @@ final class GiveWP_DW_4_Elementor
 	 * Include widgets files and register them
 	 *
 	 * @since 1.0.0
-	 *
 	 * @access public
+	 *
+	 * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
+	 * @return void
 	 */
-	public function init_widgets() {
+	public function init_widgets( $widgets_manager ) {
 
 		// Include Widget files
 		$dir = GiveWP_DW_4_Elementor_Widgets_Folder;
@@ -327,43 +329,43 @@ final class GiveWP_DW_4_Elementor
 		}
 
 		// Register Donation History widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_Donation_History_Widget());
+		$widgets_manager->register(new \DW4Elementor_Donation_History_Widget());
 
 		// Register Receipt widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Receipt_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Receipt_Widget());
 
 		// Register Totals widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Totals_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Totals_Widget());
 
 		// Register Register widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Register_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Register_Widget());
 
 		// Register Login widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Login_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Login_Widget());
 
 		// Register Profile Editor widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Profile_Editor_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Profile_Editor_Widget());
 
 		// Register Donor Wall widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Donor_Wall_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Donor_Wall_Widget());
 
 		// Register Give Goal widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Goal_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Goal_Widget());
 
 		// Register Give Goal widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Form_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Form_Widget());
 
 		// Register Give Goal widget
-		\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Form_Grid_Widget());
+		$widgets_manager->register(new \DW4Elementor_GiveWP_Form_Grid_Widget());
 
 		if ( $this->give_min_version( '2.9.0' ) ) {
 			// Register Give Multi Form Goal widget
-			\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Multi_Form_Goal_Widget());
+			$widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Multi_Form_Goal_Widget());
 		}
 
 		if ( class_exists('Give_Recurring')) {
 			// Register Give Goal widget
-			\Elementor\Plugin::instance()->widgets_manager->register(new \DW4Elementor_GiveWP_Subscriptions_Widget());
+			$widgets_manager->register(new \DW4Elementor_GiveWP_Subscriptions_Widget());
 		}
 	}
 

@@ -80,7 +80,7 @@ class DW4Elementor_GiveWP_Multi_Form_Goal_Widget extends \Elementor\Widget_Base 
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'give_multi_form_goal_settings',

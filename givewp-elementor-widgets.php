@@ -360,7 +360,7 @@ final class GiveWP_DW_4_Elementor
 
 		if ( $this->give_min_version( '2.9.0' ) ) {
 			// Register Give Multi Form Goal widget
-			$widgets_manager->register_widget_type(new \DW4Elementor_GiveWP_Multi_Form_Goal_Widget());
+			$widgets_manager->register(new \DW4Elementor_GiveWP_Multi_Form_Goal_Widget());
 		}
 
 		if ( class_exists('Give_Recurring')) {

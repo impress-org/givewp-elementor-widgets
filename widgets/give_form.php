@@ -79,6 +79,18 @@ class DW4Elementor_GiveWP_Form_Widget extends \Elementor\Widget_Base
         return ['givewp-category'];
     }
 
+	/**
+	 * Widget inner wrapper.
+	 *
+	 * Use optimized DOM structure, without the inner wrapper.
+	 *
+	 * @since 2.0.3
+	 * @access public
+	 */
+	public function has_widget_inner_wrapper(): bool {
+		return false;
+	}
+
     /**
      * Register Give Form widget controls.
      *

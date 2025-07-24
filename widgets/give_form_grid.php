@@ -70,6 +70,18 @@ class DW4Elementor_GiveWP_Form_Grid_Widget extends \Elementor\Widget_Base {
 	}
 
 	/**
+	 * Widget inner wrapper.
+	 *
+	 * Use optimized DOM structure, without the inner wrapper.
+	 *
+	 * @since 2.0.3
+	 * @access public
+	 */
+	public function has_widget_inner_wrapper(): bool {
+		return false;
+	}
+
+	/**
 	 * Register Give Form Grid widget controls.
 	 *
 	 * Adds different input fields to allow the user to change and customize the widget settings.
